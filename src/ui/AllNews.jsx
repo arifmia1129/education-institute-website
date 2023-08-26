@@ -44,20 +44,22 @@ const AllNews = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-center place-items-center my-5">
-        {news?.map((item) => (
-          <div className="m-4 flex items-center" key={item._id}>
-            <div>
-              <p className="font-bold text-primary bg-gray-100 p-1">
-                {item?.date?.split("/")[0]}-{item?.date?.split("/")[1]}
-              </p>
-              <p className="bg-primary text-white font-bold p-1">
-                {item?.date?.split("/")[2]}
-              </p>
+      <div className="md:flex justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 place-content-center place-items-start my-5">
+          {news?.map((item) => (
+            <div className="m-4 flex items-center" key={item._id}>
+              <div>
+                <p className="font-bold text-primary bg-gray-100 p-1">
+                  {item?.date?.split("/")[0]}-{item?.date?.split("/")[1]}
+                </p>
+                <p className="bg-primary text-white font-bold p-1">
+                  {item?.date?.split("/")[2]}
+                </p>
+              </div>
+              <p className="font-semibold text-green-700 mx-2">{item?.name}</p>
             </div>
-            <p className="font-semibold text-green-700 mx-2">{item?.name}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

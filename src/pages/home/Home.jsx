@@ -6,6 +6,8 @@ import AboutUsBanner from "../../ui/AboutUsBanner";
 import Vision from "../../ui/Vision";
 import Mission from "../../ui/Mission";
 import Statistics from "../../ui/Statistics";
+import RightSide from "../../ui/right-side/RightSide";
+import StudentDetails from "../../ui/studentDetails";
 
 const Home = () => {
   return (
@@ -24,10 +26,18 @@ const Home = () => {
           <NoticeBoard />
         </div>
       </div>
-      <AboutUsBanner />
-      <Vision />
-      <Mission />
-      <Statistics />
+      <div className="grid grid-cols-1 md:grid-cols-4 place-content-center">
+        <div className="col-span-3">
+          <AboutUsBanner />
+          <Vision />
+          <Mission />
+          <Statistics />
+          <StudentDetails />
+        </div>
+        <div>
+          <RightSide />
+        </div>
+      </div>
     </>
   );
 };

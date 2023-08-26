@@ -12,7 +12,7 @@ function HomeCarousel() {
   };
 
   return (
-    <div className="relative w-[95vw] mx-auto">
+    <div className="relative md:w-[95vw]  w-[90vw] mx-auto">
       <Slider autoplay={true} {...settings}>
         <div className="relative h-[75vh] w-[100vw] bg-[url('/src/assets/institute.jpg')] bg-cover bg-no-repeat">
           <div

@@ -1,6 +1,6 @@
 const AssistantHeadTeacherMessage = () => {
   return (
-    <div className="w-[90vw] md:w-full card  bg-base-100 shadow-xl m-5">
+    <div className="w-full border-2 card  bg-base-100 shadow-xl">
       <div className="card-body">
         <div className="flex justify-center">
           <div className="avatar">

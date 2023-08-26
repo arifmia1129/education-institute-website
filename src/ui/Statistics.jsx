@@ -10,7 +10,7 @@ import gpa5Img from "../assets/icons/gpa5.png";
 
 const Statistics = () => {
   return (
-    <div className="max-w-7xl mx-auto my-10 ">
+    <div className=" my-10 ">
       <div className="w-full bg-primary text-white py-2 px-5 rounded border-l-4 border-l-red-500">
         <h1 className="text-xl font-bold">বিদ্যালয়ের পরিসংখ্যান</h1>
       </div>

@@ -13,7 +13,7 @@ function TeacherMessage() {
   };
 
   return (
-    <Slider className="md:w-[45vw] m-10 w-full" autoplay={true} {...settings}>
+    <Slider className="w-full my-10" autoplay={true} {...settings}>
       <HeadTeacherMessage />
       <AssistantHeadTeacherMessage />
     </Slider>
