@@ -38,7 +38,7 @@ const Academic = () => {
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4  min-h-full  mt-20 md:mt-0 w-[50vw] lg:w-80 bg-white">
+        <ul className="menu p-4 mt-72 md:mt-0 w-[80vw] lg:w-80 bg-white">
           {/* Sidebar content here */}
           <li>
             <NavLink

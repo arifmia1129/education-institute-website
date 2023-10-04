@@ -1,6 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import Marquee from "react-fast-marquee";
 import { MdEmail } from "react-icons/md";
+import { BsLinkedin } from "react-icons/bs";
+import { AiFillYoutube } from "react-icons/ai";
+import img50 from "../../assets/50.png";
 
 const Navbar = () => {
   const menuItems = (
@@ -89,81 +94,185 @@ const Navbar = () => {
           অফিস ও প্রশাসন
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+              : "font-semibold  text-lg"
+          }
+          to="/gallery"
+        >
+          গ্যালারি
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+              : "font-semibold  text-lg"
+          }
+          to="/communicate"
+        >
+          যোগাযোগ
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+              : "font-semibold  text-lg"
+          }
+          to="/result"
+        >
+          রেজাল্ট
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+              : "font-semibold  text-lg"
+          }
+          to="/student-unique-id"
+        >
+          স্টুডেন্ট আইডি অনুসন্ধান
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+              : "font-semibold  text-lg"
+          }
+          to="/download"
+        >
+          প্রয়োজনীয় ডাউনলোড
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+              : "font-semibold  text-lg"
+          }
+          to="/download"
+        >
+          অন্যান্য তথ্য
+        </NavLink>
+      </li>
     </>
   );
   return (
-    <div className=" bg-white">
-      <div className="flex justify-between items-center">
-        <Link className="my-auto mt-5 flex items-center" to="/">
-          <img
-            width={60}
-            height={60}
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Government_Seal_of_Bangladesh.svg/800px-Government_Seal_of_Bangladesh.svg.png"
-            alt=""
-          />
-          <div className="mx-2">
-            <h1 className="font-bold  md:text-3xl text-primary">
-              কোচাশহর দ্বি-মুখী উচ্চ বিদ্যালয়
-            </h1>
-            <h1 className="font-bold  md:text-3xl text-red-500">
-              Kochashar BL High School
-            </h1>
+    <div className="bg-white">
+      <div className="grid grid-cols-1 md:grid-cols-3 ">
+        <Link
+          className="my-auto mt-5 grid grid-cols-1 md:grid-cols-2 place-content-center place-items-center col-span-2"
+          to="/"
+        >
+          <div className="flex items-center">
+            <img
+              width={60}
+              height={60}
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Government_Seal_of_Bangladesh.svg/800px-Government_Seal_of_Bangladesh.svg.png"
+              alt=""
+            />
+            <div className="mx-2">
+              <h1 className="font-bold  md:text-3xl text-primary">
+                কুলাঘাট উচ্চ বিদ্যালয়
+              </h1>
+              <h1 className="font-bold  md:text-3xl text-red-500">
+                KULAGHAT HIGH SCHOOL
+              </h1>
+            </div>
           </div>
+          <img width={200} height={150} src={img50} alt="" />
         </Link>
-        <img
-          className="h-8 w-8 md:h-16 md:w-20"
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ab/Mujib_100_Logo.svg/1200px-Mujib_100_Logo.svg.png"
-          alt=""
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 place-content-center place-items-center gap-5">
+          <div className="my-auto flex items-center">
+            <a
+              href="https://web.facebook.com/Kulaghat.High.School"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <BsLinkedin size={25} className="text-blue-500 mx-1" />
+            </a>
+            <a
+              href="https://web.facebook.com/Kulaghat.High.School"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTwitter size={25} className="text-blue-500 mx-1" />
+            </a>
+            <a
+              href="https://web.facebook.com/Kulaghat.High.School"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebook size={25} className="text-blue-500 mx-1" />
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=+kulaghathighschool.1966@gmail.com"
+            >
+              <MdEmail size={25} className="text-orange-500 mx-1" />
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=+kulaghathighschool.1966@gmail.com"
+            >
+              <AiFillYoutube size={25} className="text-red-500 mx-1" />
+            </a>
+          </div>
+          <input
+            type="text"
+            placeholder="সার্চ করুন"
+            className="input input-bordered input-sm w-full max-w-sm"
+          />
+        </div>
       </div>
       <div className="navbar">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3  p-2 rounded-box w-52 bg-white"
+        <div className="dropdown">
+          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              {menuItems}
-            </ul>
-          </div>
-        </div>
-        <div className="navbar-center flex justify-center">
-          <div className=" hidden lg:flex ">
-            <ul className="menu menu-horizontal px-1">{menuItems}</ul>
-          </div>
-        </div>
-        <div className="navbar-end my-auto">
-          <a
-            href="https://www.facebook.com/mdarif1109"
-            target="_blank"
-            rel="noopener noreferrer"
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3  p-2 rounded-box w-52 bg-white"
           >
-            <FaFacebook size={30} color="blue" />
-          </a>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=+arif.vtti@gmail.com"
-          >
-            <MdEmail size={30} className="text-blue-800 mx-2" />
-          </a>
+            {menuItems}
+          </ul>
         </div>
+        <div className=" hidden lg:flex mx-auto">
+          <ul className="menu menu-horizontal px-1">{menuItems}</ul>
+        </div>
+      </div>
+      <div className="bg-primary p-2 text-white flex items-center">
+        <p className="font-bold text-lg">সর্বশেষ:</p>
+        <Marquee>
+          প্রিয় শুভাকাঙ্খি, কুলাঘাট উচ্চ বিদ্যালয় এর ওয়েবসাইটের কাজ চলমান। খুব
+          শীঘ্রই সম্পূর্ন ওয়েবসাইটের পাবলিশ করা হবে।
+        </Marquee>
       </div>
     </div>
   );

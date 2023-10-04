@@ -1,3 +1,4 @@
+import Helpline from "./Helpline";
 import Persons from "./Persons";
 
 const RightSide = () => {
@@ -5,6 +6,14 @@ const RightSide = () => {
     <div className="m-10 flex justify-center">
       <div>
         <Persons />
+        {/* Bangla calendar */}
+        <div className="flex justify-center">
+          <iframe
+            className="h-52 w-fit px-2"
+            src="https://bengalicalendar.com/embed/index.php"
+          />
+        </div>
+        <Helpline />
       </div>
     </div>
   );

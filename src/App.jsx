@@ -9,7 +9,7 @@ function App() {
       <div className="fixed right-0 bottom-1/3 transform -translate-y-1/2">
         <button
           onClick={() => window.my_modal_5.showModal()}
-          className="bg-primary w-20 md:w-14 hover:w-44 h-12 rounded-l-full flex justify-evenly  items-center group transition-width duration-500 overflow-hidden"
+          className="bg-primary w-14 hover:w-44 h-12 rounded-l-full flex justify-evenly  items-center group transition-width duration-500 overflow-hidden"
         >
           <div className="bg-white w-10 h-10 rounded-full flex justify-center items-center">
             <BiSolidPhoneCall size={25} className="text-primary" />

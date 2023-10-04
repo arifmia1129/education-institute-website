@@ -28,10 +28,10 @@ function HomeCarousel() {
                   <Typical
                     steps={[
                       1500,
-                      "কোচাশহর দ্বি-মুখী উচ্চ বিদ্যালয়",
+                      "কুলাঘাট উচ্চ বিদ্যালয়",
                       1000,
                       "",
-                      "Kochashar BL High School",
+                      "KULAGHAT HIGH SCHOOL",
                       1000,
                       "",
                       500,
@@ -60,10 +60,10 @@ function HomeCarousel() {
                   <Typical
                     steps={[
                       1500,
-                      "কোচাশহর দ্বি-মুখী উচ্চ বিদ্যালয়",
+                      "কুলাঘাট উচ্চ বিদ্যালয়",
                       1000,
                       "",
-                      "Kochashar BL High School",
+                      "KULAGHAT HIGH SCHOOL",
                       1000,
                       "",
                       500,
