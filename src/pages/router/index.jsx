@@ -14,6 +14,9 @@ import HeadTeachers from "../admin-office/HeadTeachers";
 import AdminOffice from "../admin-office/AdminOffice";
 import AssistanceTeachers from "../admin-office/AssistanceTeachers";
 import ManagingMembers from "../admin-office/ManagingMembers";
+import AdminLogin from "../authentication/Login";
+import Admission from "../admission/Admission";
+import Marquee from "react-fast-marquee";
 
 const Index = () => {
   return (
@@ -21,12 +24,21 @@ const Index = () => {
       <div className="sticky top-0 z-50">
         <Navbar />
       </div>
+      <div className="bg-primary p-2 text-white flex items-center">
+        <p className="font-bold text-lg">সর্বশেষ:</p>
+        <Marquee>
+          প্রিয় শুভাকাঙ্খি, কুলাঘাট উচ্চ বিদ্যালয় এর ওয়েবসাইটের কাজ চলমান। খুব
+          শীঘ্রই সম্পূর্ন ওয়েবসাইটের পাবলিশ করা হবে।
+        </Marquee>
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<AllNews />} />
         <Route path="/notice" element={<AllNotice />} />
         <Route path="/event" element={<AllEvent />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/admission" element={<Admission />} />
         <Route path="/academic" element={<Academic />}>
           <Route path="routine" element={<Routine />} />
           <Route path="result" element={<Result />} />

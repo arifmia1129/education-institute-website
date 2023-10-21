@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
-import Marquee from "react-fast-marquee";
 import { MdEmail } from "react-icons/md";
 import { BsLinkedin } from "react-icons/bs";
 import { AiFillYoutube } from "react-icons/ai";
@@ -161,15 +160,20 @@ const Navbar = () => {
               ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
               : "font-semibold  text-lg"
           }
-          to="/download"
+          to="/admission"
         >
-          অন্যান্য তথ্য
+          ভর্তি ফরম
         </NavLink>
       </li>
     </>
   );
   return (
     <div className="bg-white">
+      <div className="flex mt-2 justify-end">
+        <Link to="/admin-login">
+          <button className="btn btn-primary text-white btn-sm">লগইন</button>
+        </Link>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 ">
         <Link
           className="my-auto mt-5 grid grid-cols-1 md:grid-cols-2 place-content-center place-items-center col-span-2"
@@ -263,16 +267,9 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <div className=" hidden lg:flex mx-auto">
+        <div className="hidden lg:flex mx-auto">
           <ul className="menu menu-horizontal px-1">{menuItems}</ul>
         </div>
-      </div>
-      <div className="bg-primary p-2 text-white flex items-center">
-        <p className="font-bold text-lg">সর্বশেষ:</p>
-        <Marquee>
-          প্রিয় শুভাকাঙ্খি, কুলাঘাট উচ্চ বিদ্যালয় এর ওয়েবসাইটের কাজ চলমান। খুব
-          শীঘ্রই সম্পূর্ন ওয়েবসাইটের পাবলিশ করা হবে।
-        </Marquee>
       </div>
     </div>
   );
