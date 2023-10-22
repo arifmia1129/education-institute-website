@@ -2,6 +2,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import Index from "./pages/router";
+import "./i18n";
 function App() {
   return (
     <div className="mx-3 md:mx-5 relative">

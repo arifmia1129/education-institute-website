@@ -5,8 +5,30 @@ import { MdEmail } from "react-icons/md";
 import { BsLinkedin } from "react-icons/bs";
 import { AiFillYoutube } from "react-icons/ai";
 import img50 from "../../assets/50.png";
+import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [currentLangCode, setCurrentLangCode] = useState("");
+
+  const { i18n, t } = useTranslation();
+
+  const onChangeLang = (e) => {
+    const lang_code = e.target.value;
+    i18n.changeLanguage(lang_code);
+    JSON.stringify(localStorage.setItem("langCode", e.target.value));
+    setCurrentLangCode(e.target.value);
+  };
+
+  const getCurrentLangCode = () => {
+    setCurrentLangCode(localStorage.getItem("langCode"));
+    i18n.changeLanguage(localStorage.getItem("langCode"));
+  };
+
+  useEffect(() => {
+    getCurrentLangCode();
+  }, []);
+
   const menuItems = (
     <>
       <li>
@@ -18,8 +40,371 @@ const Navbar = () => {
           }
           to="/"
         >
-          হোম
+          প্রথম পাতা
         </NavLink>
+      </li>
+      <li>
+        <details>
+          <summary className="font-semibold  text-lg my-auto">
+            প্রশাসনিক তথ্য
+          </summary>
+          <ul className="p-2 bg-base-100 w-52 h-52 overflow-scroll">
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/management-commite"
+              >
+                ব্যবস্থাপনা কমিটি
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/teachers-information"
+              >
+                শিক্ষকদের তথ্য
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                কর্মচারীদের তথ্য
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                অনুমোদিত এবং পূরণকৃত শিক্ষক/কর্মচারীর পদের সংখ্যা
+              </NavLink>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary className="font-semibold  text-lg my-auto">
+            প্রাতিষ্ঠানিক তথ্য
+          </summary>
+          <ul className="p-2 bg-base-100 w-52 h-52 overflow-scroll">
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/management-commite"
+              >
+                ইতিহাস ও পরিচিতি
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/teachers-information"
+              >
+                এমপি ও জাতীয়করণের তথ্য
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                ভূমির তপসিল
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                ভূমি মালিকানা সংক্রান্ত তথ্য
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                শিক্ষক উপস্থিতি
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                কর্মচারী উপস্থিতি
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                সফলতার গল্প
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                ভবনের তথ্য
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                গবেষণাগার
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                খেলার মাঠ
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                কম্পিউটার ল্যাব
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                মাল্টিমিডিয়া ক্লাস রুম
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                ক্রীড়া ও সাংস্কৃতিক কার্যক্রম
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                পরিচ্ছন্নতা, শরীরচর্চা এবং স্যানিটেশন
+              </NavLink>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary className="font-semibold  text-lg my-auto">
+            পাঠদান ও স্বীকৃতি প্রদান সংক্রান্ত তথ্য
+          </summary>
+          <ul className="p-2 bg-base-100 w-52 h-52 overflow-scroll">
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/management-commite"
+              >
+                শপথ বাক্য
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/teachers-information"
+              >
+                ক্লাস রুটিন
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                শ্রেণি কক্ষ
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                ফি প্রদান
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                পাঠাসূচি
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                আসন সংখ্যা
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                বই এর তালিকা
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                ইউনিফর্ম
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                আচরণ বিধি
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
+                    : "font-semibold  text-lg"
+                }
+                to="/employee-information"
+              >
+                পাঠদানের অনুমতি ও স্বীকৃতি
+              </NavLink>
+            </li>
+          </ul>
+        </details>
       </li>
       <li>
         <NavLink
@@ -170,13 +555,25 @@ const Navbar = () => {
   return (
     <div className="bg-white">
       <div className="flex mt-2 justify-end">
-        <Link to="/admin-login">
-          <button className="btn btn-primary text-white btn-sm">লগইন</button>
-        </Link>
+        <div>
+          <Link to="/admin-login">
+            <button className="btn btn-primary text-white btn-sm">
+              {t("loginBtnTxt")}
+            </button>
+          </Link>
+          <select
+            value={currentLangCode}
+            onChange={onChangeLang}
+            className="select select-sm  h-1 w-fit select-bordered  max-w-xs mx-2"
+          >
+            <option value="bn">বাংলা</option>
+            <option value="en">ENGLISH</option>
+          </select>
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 ">
         <Link
-          className="my-auto mt-5 grid grid-cols-1 md:grid-cols-2 place-content-center place-items-center col-span-2"
+          className="grid grid-cols-1 md:grid-cols-2 place-content-center place-items-center col-span-2"
           to="/"
         >
           <div className="flex items-center">
@@ -188,10 +585,7 @@ const Navbar = () => {
             />
             <div className="mx-2">
               <h1 className="font-bold  md:text-3xl text-primary">
-                কুলাঘাট উচ্চ বিদ্যালয়
-              </h1>
-              <h1 className="font-bold  md:text-3xl text-red-500">
-                KULAGHAT HIGH SCHOOL
+                {t("name")}
               </h1>
             </div>
           </div>
@@ -237,7 +631,7 @@ const Navbar = () => {
           </div>
           <input
             type="text"
-            placeholder="সার্চ করুন"
+            placeholder={t("searchText")}
             className="input input-bordered input-sm w-full max-w-sm"
           />
         </div>

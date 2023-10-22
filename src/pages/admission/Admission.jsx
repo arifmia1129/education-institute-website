@@ -73,7 +73,6 @@ export default function Admission() {
 
     setAdmissionInfo(data);
     reset();
-    setSelectedImage(null);
   };
 
   const getDivisionName = (id) => {
@@ -124,6 +123,9 @@ export default function Admission() {
         // Reset the dimensions of the applicationPage div after capturing the image
         applicationPage.style.width = "";
         applicationPage.style.height = "";
+
+        // Reset the selectedImage state to null
+        setSelectedImage(null);
       });
   };
 

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import Typical from "react-typical";
 
@@ -11,6 +12,8 @@ function HomeCarousel() {
     arrows: true,
   };
 
+  const { t } = useTranslation();
+
   return (
     <div className="relative md:w-[95vw]  w-[90vw] mx-auto">
       <Slider autoplay={true} {...settings}>
@@ -22,20 +25,11 @@ function HomeCarousel() {
             <div className="h-full w-full flex  md:p-20 items-center">
               <div>
                 <h1 className="text-5xl text-white font-bold pl-5">
-                  Welcome To
+                  {t("wlc")}
                 </h1>
                 <div className="text-5xl md:text-7xl text-white p-5 rounded">
                   <Typical
-                    steps={[
-                      1500,
-                      "কুলাঘাট উচ্চ বিদ্যালয়",
-                      1000,
-                      "",
-                      "KULAGHAT HIGH SCHOOL",
-                      1000,
-                      "",
-                      500,
-                    ]}
+                    steps={[1500, t("name"), 1000, "", 1000, "", 500]}
                     loop={Infinity}
                   />
                 </div>
@@ -54,20 +48,11 @@ function HomeCarousel() {
             <div className="h-full w-full flex  md:p-20 items-center">
               <div>
                 <h1 className="text-5xl text-white font-bold pl-5">
-                  Welcome To
+                  {t("wlc")}
                 </h1>
                 <div className="text-5xl md:text-7xl text-white p-5 rounded">
                   <Typical
-                    steps={[
-                      1500,
-                      "কুলাঘাট উচ্চ বিদ্যালয়",
-                      1000,
-                      "",
-                      "KULAGHAT HIGH SCHOOL",
-                      1000,
-                      "",
-                      500,
-                    ]}
+                    steps={[1500, t("name"), 1000, "", 1000, "", 500]}
                     loop={Infinity}
                   />
                 </div>
