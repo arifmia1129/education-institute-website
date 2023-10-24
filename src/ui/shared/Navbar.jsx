@@ -7,6 +7,7 @@ import { AiFillYoutube } from "react-icons/ai";
 import img50 from "../../assets/50.png";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [currentLangCode, setCurrentLangCode] = useState("");
@@ -35,8 +36,8 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-              : "font-semibold  text-lg"
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+              : "font-semibold  text-md"
           }
           to="/"
         >
@@ -45,16 +46,16 @@ const Navbar = () => {
       </li>
       <li>
         <details>
-          <summary className="font-semibold  text-lg my-auto">
+          <summary className="font-semibold  text-md my-auto">
             প্রশাসনিক তথ্য
           </summary>
-          <ul className="p-2 bg-base-100 w-52 h-52 overflow-scroll">
+          <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
             <li>
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/management-commite"
               >
@@ -65,8 +66,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/teachers-information"
               >
@@ -77,8 +78,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -89,8 +90,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -102,16 +103,16 @@ const Navbar = () => {
       </li>
       <li>
         <details>
-          <summary className="font-semibold  text-lg my-auto">
+          <summary className="font-semibold  text-md my-auto">
             প্রাতিষ্ঠানিক তথ্য
           </summary>
-          <ul className="p-2 bg-base-100 w-52 h-52 overflow-scroll">
+          <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
             <li>
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/management-commite"
               >
@@ -122,8 +123,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/teachers-information"
               >
@@ -134,8 +135,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -146,8 +147,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -158,8 +159,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -170,8 +171,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -182,8 +183,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -194,8 +195,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -206,8 +207,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -218,8 +219,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -230,8 +231,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -242,8 +243,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -254,8 +255,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -266,8 +267,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -279,16 +280,16 @@ const Navbar = () => {
       </li>
       <li>
         <details>
-          <summary className="font-semibold  text-lg my-auto">
+          <summary className="font-semibold  text-md my-auto">
             পাঠদান ও স্বীকৃতি প্রদান সংক্রান্ত তথ্য
           </summary>
-          <ul className="p-2 bg-base-100 w-52 h-52 overflow-scroll">
+          <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
             <li>
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/management-commite"
               >
@@ -299,8 +300,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/teachers-information"
               >
@@ -311,8 +312,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -323,8 +324,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -335,8 +336,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -347,8 +348,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -359,8 +360,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -371,8 +372,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -383,8 +384,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -395,8 +396,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-                    : "font-semibold  text-lg"
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
                 }
                 to="/employee-information"
               >
@@ -407,95 +408,334 @@ const Navbar = () => {
         </details>
       </li>
       <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-              : "font-semibold  text-lg"
-          }
-          to="/about-us"
-        >
-          আমাদের সম্পর্কে
-        </NavLink>
+        <details>
+          <summary className="font-semibold  text-md my-auto">
+            সহপাঠ কার্যক্রম
+          </summary>
+          <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/management-commite"
+              >
+                স্কাউট
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/teachers-information"
+              >
+                বিজ্ঞান ক্লাব
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/employee-information"
+              >
+                সাংস্কৃতিক ক্লাব
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/employee-information"
+              >
+                শিক্ষা ক্লাব
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/employee-information"
+              >
+                খেলাধুলা ক্লাব
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/employee-information"
+              >
+                আইসিটি ক্লাব
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/employee-information"
+              >
+                অন্যান্য কার্যক্রম
+              </NavLink>
+            </li>
+          </ul>
+        </details>
       </li>
+      <li>
+        <details>
+          <summary className="font-semibold  text-md my-auto">
+            ছাত্র ছাত্রীদের তথ্য
+          </summary>
+          <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/management-commite"
+              >
+                শিক্ষার্থী আইডি অনুসন্ধান
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/teachers-information"
+              >
+                ক্লাস ভিত্তিক শিক্ষার্থীদের তথ্য
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/employee-information"
+              >
+                উপবৃত্তি প্রাপ্ত শিক্ষার্থীদের তথ্য
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/employee-information"
+              >
+                মেধাবী শিক্ষার্থীদের তথ্য
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/employee-information"
+              >
+                ক্লাস ভিত্তিক শিক্ষার্থীর উপস্থিতি
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/employee-information"
+              >
+                প্রাক্তন মেধাবী শিক্ষার্থীদের তথ্য
+              </NavLink>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary className="font-semibold  text-md my-auto">
+            ভর্তি সংক্রান্ত তথ্য
+          </summary>
+          <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/admission"
+              >
+                ভর্তি আবেদন - ২০২৪
+              </NavLink>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary className="font-semibold  text-md my-auto">
+            পরীক্ষা সম্পর্কিত তথ্য
+          </summary>
+          <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/admission"
+              >
+                পরীক্ষা ফলাফল (আইডি অনুসন্ধান দিয়ে রেজাল্ট)
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/admission"
+              >
+                পাশকৃত শিক্ষার্থীদের তথ্য
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/admission"
+              >
+                অকৃতকার্য শিক্ষার্থীদের তথ্য
+              </NavLink>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary className="font-semibold  text-md my-auto">
+            অনলাইন আবেদন
+          </summary>
+          <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/admission"
+              >
+                ছুটির জন্য আবেদন (ছাত্র/ছাত্রী)
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/admission"
+              >
+                ছুটির জন্য আবেদন (শিক্ষক)
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/admission"
+              >
+                প্রত্যয়নের জন্য আবেদন
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+                    : "font-semibold  text-md"
+                }
+                to="/admission"
+              >
+                প্রসংশা পত্রের জন্য আবেদন
+              </NavLink>
+            </li>
+          </ul>
+        </details>
+      </li>
+
       <li>
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-              : "font-semibold  text-lg"
-          }
-          to="/event"
-        >
-          ইভেন্ট
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-              : "font-semibold  text-lg"
-          }
-          to="/news"
-        >
-          নিউজ
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-              : "font-semibold  text-lg"
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+              : "font-semibold  text-md"
           }
           to="/notice"
         >
           নোটিশ
         </NavLink>
       </li>
+
       <li>
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-              : "font-semibold  text-lg"
-          }
-          to="/academic/routine"
-        >
-          একাডেমিক
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-              : "font-semibold  text-lg"
-          }
-          to="/office/head-teacher"
-        >
-          অফিস ও প্রশাসন
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-              : "font-semibold  text-lg"
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+              : "font-semibold  text-md"
           }
           to="/gallery"
         >
-          গ্যালারি
+          ফটো গ্যালারি
         </NavLink>
       </li>
       <li>
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-              : "font-semibold  text-lg"
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+              : "font-semibold  text-md"
           }
           to="/communicate"
         >
@@ -506,48 +746,12 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-              : "font-semibold  text-lg"
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+              : "font-semibold text-md"
           }
           to="/result"
         >
-          রেজাল্ট
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-              : "font-semibold  text-lg"
-          }
-          to="/student-unique-id"
-        >
-          স্টুডেন্ট আইডি অনুসন্ধান
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-              : "font-semibold  text-lg"
-          }
-          to="/download"
-        >
-          প্রয়োজনীয় ডাউনলোড
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-lg"
-              : "font-semibold  text-lg"
-          }
-          to="/admission"
-        >
-          ভর্তি ফরম
+          ই-স্কুল
         </NavLink>
       </li>
     </>

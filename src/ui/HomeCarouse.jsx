@@ -17,7 +17,7 @@ function HomeCarousel() {
   return (
     <div className="relative md:w-[95vw]  w-[90vw] mx-auto">
       <Slider autoplay={true} {...settings}>
-        <div className="relative h-[75vh] w-[100vw] bg-[url('/src/assets/institute.jpg')] bg-cover bg-no-repeat">
+        <div className="relative h-[65vh] w-[100vw] bg-[url('/src/assets/institute.jpg')] bg-cover bg-no-repeat">
           <div
             className="absolute inset-0"
             style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
@@ -40,7 +40,7 @@ function HomeCarousel() {
             </div>
           </div>
         </div>
-        <div className="relative h-[75vh] w-[100vw] bg-[url('/src/assets/student.jpg')] bg-cover bg-no-repeat">
+        <div className="relative h-[65vh] w-[100vw] bg-[url('/src/assets/student.jpg')] bg-cover bg-no-repeat">
           <div
             className="absolute inset-0"
             style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}

@@ -6,6 +6,7 @@ import upazila from "../../data/upazila.json";
 import QRCode from "react-qr-code";
 import * as htmlToImage from "html-to-image";
 import { jsPDF } from "jspdf";
+import generateUniqueId from "../../utils/generateUniqueId";
 
 export default function Admission() {
   const [presentAddressDistricts, setPresentAddressDistricts] = useState([]);
@@ -141,9 +142,43 @@ export default function Admission() {
             <span className="text-red-500"> ইংরেজিতে </span> পূরণ করতে হবে।
           </p>
           <p className="font-bold text-lg">
-            * লাল তারকা (<span className="text-red-500 font-bold">*</span>)
-            চিহ্ণিত তথ্যগুলো অবশ্যই প্রদান করতে হবে।
+            <span className="text-red-500 font-bold">*</span> লাল তারকা (
+            <span className="text-red-500 font-bold">*</span>) চিহ্ণিত তথ্যগুলো
+            অবশ্যই প্রদান করতে হবে।
           </p>
+          <p className="font-bold text-lg">
+            <span className="text-red-500 font-bold">*</span> ইচ্ছাকৃতভাবে ভুল
+            জন্ম নিবন্ধন নং প্রদান করলে অথবা একাধিক ভুয়া জন্ম নিবন্ধন নং ব্যবহার
+            করে আবেদন করলে তার প্রার্থিতা বাতিল করা হবে।
+          </p>
+          <p className="font-bold text-lg">
+            <span className="text-red-500 font-bold">*</span> আবেদন কারীর অবশ্যই
+            ডিজিটাল জন্ম নিবন্ধন সনদ (উভয় ভাষায়) থাকতে হবে।
+          </p>
+          <p className="font-bold text-lg">
+            <span className="text-red-500 font-bold">*</span> আবেদন ও ফি প্রদানে
+            যে কোন সমস্যায় যোগাযোগ করতে পারবেন: মোঃ সায়হান সৈকত, #০১৭৪৪৭৬৯৩৩১
+          </p>
+
+          <div className="w-full flex justify-center">
+            <div className="my-5 border-2 rounded-lg p-5 w-fit">
+              <h1 className="text-lg font-bold text-primary">
+                পেমেন্ট নির্দেশনা
+              </h1>
+              <ul>
+                <li>1. আবেদন ফি Tk. 120.00</li>
+                <li>2. আবেদন ফি প্রদানের শেষ তারিখ 14-11-2023 11:59 PM.</li>
+                <li>
+                  3. আবেদন ফি ডাচ বাংলা এজেন্ট ব্যাংক, কুলাঘাট বাজার শাখায়,
+                  হিসাব নম্বরঃ 7017513889334- এ ১২০ টাকা জমা দিতে হবে।
+                </li>
+                <li>
+                  4. আবেদন কপি ও আবেদন ফি জমাদানের রসিদ সহ বিদ্যালয়ের অফিস
+                  চলাকালীন সময়ে জমা দিতে হবে।
+                </li>
+              </ul>
+            </div>
+          </div>
 
           <form className="my-10" onSubmit={handleSubmit(onSubmit)}>
             <div className=" border-2 rounded-lg my-5 p-5">
@@ -417,6 +452,55 @@ export default function Admission() {
                   <label className="label">
                     <span className="label-text-alt text-red-500">
                       {errors.className && errors.className.message}
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div className="md:grid grid-cols-1 md:grid-cols-2 place-content-center place-items-center">
+                <div className="form-control w-[90%]">
+                  <label className="label">
+                    <span className="label-text">
+                      পূর্ববর্তী বিদ্যালয়ের নাম
+                      <span className="text-red-500 font-bold">*</span>
+                    </span>
+                  </label>
+                  <input
+                    {...register("pastSchoolName", {
+                      required: "পূর্ববর্তী বিদ্যালয়ের নাম আবশ্যক",
+                    })}
+                    type="text"
+                    placeholder="পূর্ববর্তী বিদ্যালয়ের নাম লিখুন"
+                    className="input input-bordered w-[90%]"
+                  />
+                  <label className="label">
+                    <span className="label-text-alt text-red-500">
+                      {errors?.pastSchoolName && errors?.pastSchoolName.message}
+                    </span>
+                  </label>
+                </div>
+                <div className="form-control w-[90%]">
+                  <label className="label">
+                    <span className="label-text">
+                      পূর্ববর্তী শ্রেণী
+                      <span className="text-red-500 font-bold">*</span>
+                    </span>
+                  </label>
+                  <select
+                    {...register("pastClassName", {
+                      required: "পূর্ববর্তী শ্রেণী আবশ্যক",
+                    })}
+                    className="select select-bordered"
+                    placeholder="পূর্ববর্তী শ্রেণী নির্বাচন করুন"
+                  >
+                    <option value="৬ষ্ঠ">৬ষ্ঠ</option>
+                    <option value="৭ম">৭ম</option>
+                    <option value="৮ম">৮ম</option>
+                    <option value="৯ম">৯ম</option>
+                    <option value="১০ম">১০ম</option>
+                  </select>
+                  <label className="label">
+                    <span className="label-text-alt text-red-500">
+                      {errors.pastClassName && errors.pastClassName.message}
                     </span>
                   </label>
                 </div>
@@ -753,6 +837,10 @@ export default function Admission() {
                   <h1 className="font-bold  md:text-3xl text-red-500">
                     KULAGHAT HIGH SCHOOL
                   </h1>
+                  <div className="w-full flex justify-between mt-2">
+                    <small>EIIN: 122950</small>
+                    <small>Code: 7257</small>
+                  </div>
                 </div>
               </div>
               <div className="border-2 p-5 rounded">
@@ -772,6 +860,11 @@ export default function Admission() {
                 </div>
 
                 <div className="text-small">
+                  <div className="flex justify-start items-center">
+                    <p className="w-64 font-bold">আবেদন নম্বর</p>
+
+                    <p>: {generateUniqueId()}</p>
+                  </div>
                   <div className="flex justify-start items-center">
                     <p className="w-64 font-bold">নাম</p>
 
@@ -827,6 +920,16 @@ export default function Admission() {
                     <p className="w-64 font-bold">অভিভাবকের এনআইডি</p>
 
                     <p>: {admissionInfo?.gaurdianNid}</p>
+                  </div>
+                  <div className="flex justify-start items-center">
+                    <p className="w-64 font-bold">পূর্ববর্তী বিদ্যালয়</p>
+
+                    <p>: {admissionInfo?.pastSchoolName}</p>
+                  </div>
+                  <div className="flex justify-start items-center">
+                    <p className="w-64 font-bold">পূর্ববর্তী শ্রেণী</p>
+
+                    <p>: {admissionInfo?.pastClassName}</p>
                   </div>
                   <div className="flex justify-start items-center">
                     <p className="w-64 font-bold">শ্রেণী</p>
