@@ -5,7 +5,7 @@ import Index from "./pages/router";
 import "./i18n";
 function App() {
   return (
-    <div className="mx-3 md:mx-5 relative">
+    <div className="relative">
       <Index />
       <div className="fixed right-0 bottom-1/3 transform -translate-y-1/2">
         <button
