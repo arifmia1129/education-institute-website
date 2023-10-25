@@ -7,6 +7,7 @@ import QRCode from "react-qr-code";
 import * as htmlToImage from "html-to-image";
 import { jsPDF } from "jspdf";
 import generateUniqueId from "../../utils/generateUniqueId";
+import CountDown from "../../ui/shared/CountDown";
 
 export default function Admission() {
   const [presentAddressDistricts, setPresentAddressDistricts] = useState([]);
@@ -78,17 +79,17 @@ export default function Admission() {
 
   const getDivisionName = (id) => {
     const divisionInfo = divisions.find((div) => div.id === id);
-    return divisionInfo.bn_name;
+    return divisionInfo.name;
   };
 
   const getDistrictName = (id) => {
     const districtInfo = district.find((dis) => dis.id === id);
-    return districtInfo.bn_name;
+    return districtInfo.name;
   };
 
   const getUpazilaName = (id) => {
     const upazilaInfo = upazila.find((upa) => upa.id === id);
-    return upazilaInfo.bn_name;
+    return upazilaInfo.name;
   };
 
   const handlePrintDocument = () => {
@@ -137,6 +138,9 @@ export default function Admission() {
           <h1 className="text-3xl font-bold text-center text-primary">
             ভর্তি আবেদন-২০২৩
           </h1>
+          <div>
+            <CountDown monthDay="11-14" />
+          </div>
           <p className="font-bold text-lg">
             <span className="text-red-500 font-bold">*</span> সমস্ত তথ্য অবশ্যই
             <span className="text-red-500"> ইংরেজিতে </span> পূরণ করতে হবে।
@@ -159,26 +163,6 @@ export default function Admission() {
             <span className="text-red-500 font-bold">*</span> আবেদন ও ফি প্রদানে
             যে কোন সমস্যায় যোগাযোগ করতে পারবেন: মোঃ সায়হান সৈকত, #০১৭৪৪৭৬৯৩৩১
           </p>
-
-          <div className="w-full flex justify-center">
-            <div className="my-5 border-2 rounded-lg p-5 w-fit">
-              <h1 className="text-lg font-bold text-primary">
-                পেমেন্ট নির্দেশনা
-              </h1>
-              <ul>
-                <li>1. আবেদন ফি Tk. 120.00</li>
-                <li>2. আবেদন ফি প্রদানের শেষ তারিখ 14-11-2023 11:59 PM.</li>
-                <li>
-                  3. আবেদন ফি ডাচ বাংলা এজেন্ট ব্যাংক, কুলাঘাট বাজার শাখায়,
-                  হিসাব নম্বরঃ 7017513889334- এ ১২০ টাকা জমা দিতে হবে।
-                </li>
-                <li>
-                  4. আবেদন কপি ও আবেদন ফি জমাদানের রসিদ সহ বিদ্যালয়ের অফিস
-                  চলাকালীন সময়ে জমা দিতে হবে।
-                </li>
-              </ul>
-            </div>
-          </div>
 
           <form className="my-10" onSubmit={handleSubmit(onSubmit)}>
             <div className=" border-2 rounded-lg my-5 p-5">
@@ -261,9 +245,9 @@ export default function Admission() {
                     })}
                     className="select select-bordered"
                   >
-                    <option value="বালক">বালক</option>
-                    <option value="বালিক">বালিক</option>
-                    <option value="তৃতীয় লিঙ্গ">তৃতীয় লিঙ্গ</option>
+                    <option value="BOY">BOY</option>
+                    <option value="GIRL">FEMALE</option>
+                    <option value="OTHER">OTHER</option>
                   </select>
                   <label className="label">
                     <span className="label-text-alt text-red-500">
@@ -443,11 +427,11 @@ export default function Admission() {
                     className="select select-bordered"
                     placeholder="যে শ্রেণিতে ভর্তি হতে চান সেটি নির্বাচন করুন"
                   >
-                    <option value="৬ষ্ঠ">৬ষ্ঠ</option>
-                    <option value="৭ম">৭ম</option>
-                    <option value="৮ম">৮ম</option>
-                    <option value="৯ম">৯ম</option>
-                    <option value="১০ম">১০ম</option>
+                    <option value="SIX">SIX</option>
+                    <option value="SEVEN">SEVEN</option>
+                    <option value="EIGHT">EIGHT</option>
+                    <option value="NINE">NINE</option>
+                    <option value="TEN">TEN</option>
                   </select>
                   <label className="label">
                     <span className="label-text-alt text-red-500">
@@ -492,11 +476,11 @@ export default function Admission() {
                     className="select select-bordered"
                     placeholder="পূর্ববর্তী শ্রেণী নির্বাচন করুন"
                   >
-                    <option value="৬ষ্ঠ">৬ষ্ঠ</option>
-                    <option value="৭ম">৭ম</option>
-                    <option value="৮ম">৮ম</option>
-                    <option value="৯ম">৯ম</option>
-                    <option value="১০ম">১০ম</option>
+                    <option value="SIX">SIX</option>
+                    <option value="SEVEN">SEVEN</option>
+                    <option value="EIGHT">EIGHT</option>
+                    <option value="NINE">NINE</option>
+                    <option value="TEN">TEN</option>
                   </select>
                   <label className="label">
                     <span className="label-text-alt text-red-500">
@@ -549,7 +533,7 @@ export default function Admission() {
                   >
                     {divisions?.map((division) => (
                       <option key={division?.id} value={division?.id}>
-                        {division?.bn_name}
+                        {division?.name}
                       </option>
                     ))}
                   </select>
@@ -576,7 +560,7 @@ export default function Admission() {
                   >
                     {presentAddressDistricts?.map((district) => (
                       <option key={district?.id} value={district?.id}>
-                        {district?.bn_name}
+                        {district?.name}
                       </option>
                     ))}
                   </select>
@@ -603,7 +587,7 @@ export default function Admission() {
                   >
                     {presentAddressUpazilas?.map((upazila) => (
                       <option key={upazila.id} value={upazila.id}>
-                        {upazila.bn_name}
+                        {upazila.name}
                       </option>
                     ))}
                   </select>
@@ -680,7 +664,7 @@ export default function Admission() {
                   >
                     {divisions?.map((division) => (
                       <option key={division?.id} value={division?.id}>
-                        {division?.bn_name}
+                        {division?.name}
                       </option>
                     ))}
                   </select>
@@ -707,7 +691,7 @@ export default function Admission() {
                   >
                     {permanentAddressDistricts?.map((district) => (
                       <option key={district?.id} value={district?.id}>
-                        {district?.bn_name}
+                        {district?.name}
                       </option>
                     ))}
                   </select>
@@ -734,7 +718,7 @@ export default function Admission() {
                   >
                     {permanentAddressUpazilas?.map((upazila) => (
                       <option key={upazila.id} value={upazila.id}>
-                        {upazila.bn_name}
+                        {upazila.name}
                       </option>
                     ))}
                   </select>
@@ -843,8 +827,8 @@ export default function Admission() {
                   </div>
                 </div>
               </div>
-              <div className="border-2 p-5 rounded">
-                <div className="bg-primary">
+              <div className="border-2 p-5 ">
+                <div className="bg-primary rounded-md">
                   <h3 className="text-xl text-white text-center mb-5  ">
                     ভর্তি ফরম ২০২৪
                   </h3>
@@ -861,78 +845,78 @@ export default function Admission() {
 
                 <div className="text-small">
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">আবেদন নম্বর</p>
+                    <p className="w-36 font-bold">আবেদন নম্বর</p>
 
                     <p>: {generateUniqueId()}</p>
                   </div>
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">নাম</p>
+                    <p className="w-36 font-bold">নাম</p>
 
                     <p>: {admissionInfo?.name}</p>
                   </div>
 
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">জন্ম সনদ নং</p>
+                    <p className="w-36 font-bold">জন্ম সনদ নং</p>
                     <p>: {admissionInfo?.birthCertificateNo}</p>
                   </div>
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">জন্ম তারিখ</p>
+                    <p className="w-36 font-bold">জন্ম তারিখ</p>
 
                     <p>: {admissionInfo?.dateOfBirth}</p>
                   </div>
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">লিঙ্গ</p>
+                    <p className="w-36 font-bold">লিঙ্গ</p>
 
                     <p>: {admissionInfo?.gender}</p>
                   </div>
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">মোবাইল নং</p>
+                    <p className="w-36 font-bold">মোবাইল নং</p>
 
                     <p>: {admissionInfo?.contactNo}</p>
                   </div>
 
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">পিতার নাম</p>
+                    <p className="w-36 font-bold">পিতার নাম</p>
 
                     <p>: {admissionInfo?.fatherName}</p>
                   </div>
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">পিতার এনআইডি</p>
+                    <p className="w-36 font-bold">পিতার এনআইডি</p>
 
                     <p>: {admissionInfo?.fahterNid}</p>
                   </div>
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">মাতার নাম</p>
+                    <p className="w-36 font-bold">মাতার নাম</p>
 
                     <p>: {admissionInfo?.motherName}</p>
                   </div>
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">মাতার এনআইডি</p>
+                    <p className="w-36 font-bold">মাতার এনআইডি</p>
 
                     <p>: {admissionInfo?.motherNid}</p>
                   </div>
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">অভিভাবকের নাম</p>
+                    <p className="w-36 font-bold">অভিভাবকের নাম</p>
 
                     <p>: {admissionInfo?.gaurdianName}</p>
                   </div>
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">অভিভাবকের এনআইডি</p>
+                    <p className="w-36 font-bold">অভিভাবকের এনআইডি</p>
 
                     <p>: {admissionInfo?.gaurdianNid}</p>
                   </div>
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">পূর্ববর্তী বিদ্যালয়</p>
+                    <p className="w-36 font-bold">পূর্ববর্তী বিদ্যালয়</p>
 
                     <p>: {admissionInfo?.pastSchoolName}</p>
                   </div>
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">পূর্ববর্তী শ্রেণী</p>
+                    <p className="w-36 font-bold">পূর্ববর্তী শ্রেণী</p>
 
                     <p>: {admissionInfo?.pastClassName}</p>
                   </div>
                   <div className="flex justify-start items-center">
-                    <p className="w-64 font-bold">শ্রেণী</p>
+                    <p className="w-36 font-bold">শ্রেণী</p>
 
                     <p>: {admissionInfo?.className}</p>
                   </div>
@@ -1009,7 +993,7 @@ export default function Admission() {
                   </div>
                 </div>
               </div>
-              <div className="border-2 my-2 p-5 rounded-lg flex items-center justify-between max-h-32">
+              <div className="p-2 mt-2 rounded-lg flex items-center justify-between">
                 <div className="text-sm col-span-2">
                   <h3 className="font-bold text-lg">নির্দেশনা:</h3>
                   <p>১। আবেদনপত্রের প্রিন্ট কপি অবশ্যই সংগ্রহ করতে হবে।</p>
@@ -1018,6 +1002,26 @@ export default function Admission() {
                     ৩। একই শিক্ষার্থী একাধিক শ্রেণিতে ভর্তির আবেদন করতে পারবে
                     না।
                   </p>
+                  <div>
+                    <h1 className="text-lg font-bold text-primary">
+                      পেমেন্ট নির্দেশনা:
+                    </h1>
+                    <ul>
+                      <li>1. আবেদন ফি Tk. 120.00</li>
+                      <li>
+                        2. আবেদন ফি প্রদানের শেষ তারিখ 14-11-2023 11:59 PM.
+                      </li>
+                      <li>
+                        3. আবেদন ফি ডাচ বাংলা এজেন্ট ব্যাংক, কুলাঘাট বাজার
+                        শাখায়, হিসাব নম্বরঃ 7017513889334- এ ১২০ টাকা জমা দিতে
+                        হবে।
+                      </li>
+                      <li>
+                        4. আবেদন কপি ও আবেদন ফি জমাদানের রসিদ সহ বিদ্যালয়ের অফিস
+                        চলাকালীন সময়ে জমা দিতে হবে।
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <QRCode
                   size={256}
@@ -1026,6 +1030,11 @@ export default function Admission() {
                   viewBox={`0 0 256 256`}
                 />
               </div>
+              <p className="text-center mb-2 font-bold">
+                <small>
+                  &copy;2023 কুলাঘাট উচ্চ বিদ্যালয় সমস্ত অধিকার সংরক্ষিত
+                </small>
+              </p>
             </div>
           </div>
           <div className="flex justify-center my-5 control-group">
