@@ -19,7 +19,7 @@ const Statistics = () => {
           <div className="w-full flex justify-center">
             <img width={100} src={establishedImg} alt="" />
           </div>
-          <h1 className="text-3xl font-bold text-center">১৯৯৪</h1>
+          <h1 className="text-3xl font-bold text-center">১৯৬৬</h1>
           <h1 className="text-xl font-semibold text-center">প্রতিষ্ঠাকাল</h1>
         </div>
         <div className="m-5">

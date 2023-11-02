@@ -13,8 +13,8 @@ const AboutUsBanner = () => {
             কুলাঘাট উচ্চ বিদ্যালয়ে আপনাকে স্বাগতম
           </p>
           <p className="my-5">
-            কুলাঘাট উচ্চ বিদ্যালয় ০১/০১/১৯৯৪ ইং সালে প্রতিষ্ঠিত হয় ।(EIIN:
-            122950, School Code: 7257)
+            কুলাঘাট উচ্চ বিদ্যালয় ১৯৬৬ ইং সালে প্রতিষ্ঠিত হয় ।(EIIN: 122950,
+            School Code: 7257)
           </p>
           <button className="btn btn-primary text-white">বিস্তারিত</button>
         </div>

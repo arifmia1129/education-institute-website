@@ -1,3 +1,4 @@
+import president from "../assets/president.jpg";
 const AssistantHeadTeacherMessage = () => {
   return (
     <div className="w-full border-2 card  bg-base-100 shadow-xl">
@@ -5,7 +6,7 @@ const AssistantHeadTeacherMessage = () => {
         <div className="flex justify-center">
           <div className="avatar">
             <div className="w-24 rounded-full">
-              <img src="https://img.freepik.com/free-photo/portrait-friendly-confident-caucasian-bearded-guy-with-moustache-wearing-glasses-smiling-politely-looking-relaxed-calm-gray-wall-listening-customer-complaint-gray-wall_176420-22514.jpg" />
+              <img src={president} />
             </div>
           </div>
         </div>
@@ -21,8 +22,8 @@ const AssistantHeadTeacherMessage = () => {
           শ্রেণীবদ্ধ ভাবে উন্নত করতে সমর্থ।
         </p>
         <div className="text-center mt-5">
-          <p className="font-bold">-মো: আইয়ুব হোসেন-</p>
-          <p className="font-semibold">সহকারী প্রধান শিক্ষক</p>
+          <p className="font-bold">মোঃ হারুন অর রশিদ</p>
+          <p className="font-semibold">সভাপতি</p>
         </div>
       </div>
     </div>
