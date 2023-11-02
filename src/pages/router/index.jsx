@@ -31,25 +31,27 @@ const Index = () => {
           শীঘ্রই সম্পূর্ন ওয়েবসাইটের পাবলিশ করা হবে।
         </Marquee>
       </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/news" element={<AllNews />} />
-        <Route path="/notice" element={<AllNotice />} />
-        <Route path="/event" element={<AllEvent />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/admin-login" element={<AdminLogin />} />
-        <Route path="/admission" element={<Admission />} />
-        <Route path="/academic" element={<Academic />}>
-          <Route path="routine" element={<Routine />} />
-          <Route path="result" element={<Result />} />
-        </Route>
-        <Route path="/office" element={<AdminOffice />}>
-          <Route path="head-teacher" element={<HeadTeachers />} />
-          <Route path="assistance-teacher" element={<AssistanceTeachers />} />
-          <Route path="managing-member" element={<ManagingMembers />} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div className="mx-2 md:mx-5">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/news" element={<AllNews />} />
+          <Route path="/notice" element={<AllNotice />} />
+          <Route path="/event" element={<AllEvent />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/admission" element={<Admission />} />
+          <Route path="/academic" element={<Academic />}>
+            <Route path="routine" element={<Routine />} />
+            <Route path="result" element={<Result />} />
+          </Route>
+          <Route path="/office" element={<AdminOffice />}>
+            <Route path="head-teacher" element={<HeadTeachers />} />
+            <Route path="assistance-teacher" element={<AssistanceTeachers />} />
+            <Route path="managing-member" element={<ManagingMembers />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );

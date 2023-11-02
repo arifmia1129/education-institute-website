@@ -1,3 +1,6 @@
+import headSir from "../../assets/head-sir.jpg";
+import president from "../../assets/president.jpg";
+
 const Persons = () => {
   return (
     <div className="w-full">
@@ -7,17 +10,9 @@ const Persons = () => {
         </div>
         <div>
           <div className="flex justify-center">
-            <img
-              className="w-52 h-60"
-              src={
-                "https://img.freepik.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg"
-              }
-              alt="head-teacher"
-            />
+            <img className="w-52 h-60" src={headSir} alt="head-teacher" />
           </div>
-          <p className="font-bold text-xl text-center my-2">
-            প্রফেসর মোঃ জহির উদ্দিন
-          </p>
+          <p className="font-bold text-xl text-center my-2">মোঃ শাহজাহান আলী</p>
         </div>
       </div>
       <div>
@@ -26,16 +21,10 @@ const Persons = () => {
         </div>
         <div>
           <div className="flex justify-center">
-            <img
-              className="w-52 h-60"
-              src={
-                "https://img.freepik.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg"
-              }
-              alt="head-teacher"
-            />
+            <img className="w-52 h-60" src={president} alt="head-teacher" />
           </div>
           <p className="font-bold text-xl text-center my-2">
-            প্রফেসর মোঃ জহির উদ্দিন
+            মোঃ হারুন অর রশিদ
           </p>
         </div>
       </div>

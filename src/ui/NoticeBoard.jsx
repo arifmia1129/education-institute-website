@@ -10,7 +10,7 @@ const NoticeBoard = () => {
   const activeClass =
     "border-2 border-t-primary border-b-0 text-primary text-center p-2 font-bold curson-pointer";
   return (
-    <div className="md:w-[25vw] w-[90vw] border rounded-lg shadow-lg m-10 px-10">
+    <div className="md:w-[35vw] w-[90vw] border rounded-lg shadow-lg m-10 px-10">
       <div className="m-10 grid grid-cols-1 md:grid-cols-3 ">
         <div
           onClick={() => setCurrentTab(1)}

@@ -1,3 +1,4 @@
+import AllButton from "./AllButton";
 import Helpline from "./Helpline";
 import Persons from "./Persons";
 
@@ -6,6 +7,7 @@ const RightSide = () => {
     <div className="m-10 flex justify-center">
       <div>
         <Persons />
+        <AllButton />
         {/* Bangla calendar */}
         <div className="flex justify-center">
           <iframe
