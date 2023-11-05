@@ -1,6 +1,21 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 export default function MenuItems() {
+  const [isOpenSubmenu, setIsOpenSubmenu] = useState(null);
+
+  console.log(isOpenSubmenu);
+
+  useEffect(() => {
+    let timeoutId;
+    if (isOpenSubmenu) {
+      timeoutId = setTimeout(() => {
+        setIsOpenSubmenu(null);
+      }, 30000);
+    }
+    return () => clearTimeout(timeoutId);
+  }, [isOpenSubmenu]);
+
   return (
     <>
       <li>
@@ -16,7 +31,13 @@ export default function MenuItems() {
         </NavLink>
       </li>
       <li>
-        <details>
+        <details
+          open={isOpenSubmenu === "admistration-info"}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsOpenSubmenu("admistration-info");
+          }}
+        >
           <summary className="font-semibold  text-md my-auto">
             প্রশাসনিক তথ্য
           </summary>
@@ -73,7 +94,13 @@ export default function MenuItems() {
         </details>
       </li>
       <li>
-        <details>
+        <details
+          open={isOpenSubmenu === "institute-info"}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsOpenSubmenu("institute-info");
+          }}
+        >
           <summary className="font-semibold  text-md my-auto">
             প্রাতিষ্ঠানিক তথ্য
           </summary>
@@ -250,7 +277,13 @@ export default function MenuItems() {
         </details>
       </li>
       <li>
-        <details>
+        <details
+          open={isOpenSubmenu === "class-info"}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsOpenSubmenu("class-info");
+          }}
+        >
           <summary className="font-semibold  text-md my-auto">
             পাঠদান ও স্বীকৃতি প্রদান সংক্রান্ত তথ্য
           </summary>
@@ -379,7 +412,13 @@ export default function MenuItems() {
         </details>
       </li>
       <li>
-        <details>
+        <details
+          open={isOpenSubmenu === "extra-activities-info"}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsOpenSubmenu("extra-activities-info");
+          }}
+        >
           <summary className="font-semibold  text-md my-auto">
             সহপাঠ কার্যক্রম
           </summary>
@@ -472,7 +511,13 @@ export default function MenuItems() {
         </details>
       </li>
       <li>
-        <details>
+        <details
+          open={isOpenSubmenu === "student-info"}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsOpenSubmenu("student-info");
+          }}
+        >
           <summary className="font-semibold  text-md my-auto">
             ছাত্র ছাত্রীদের তথ্য
           </summary>
@@ -553,7 +598,13 @@ export default function MenuItems() {
         </details>
       </li>
       <li>
-        <details>
+        <details
+          open={isOpenSubmenu === "admission-info"}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsOpenSubmenu("admission-info");
+          }}
+        >
           <summary className="font-semibold  text-md my-auto">
             ভর্তি সংক্রান্ত তথ্য
           </summary>
@@ -574,7 +625,13 @@ export default function MenuItems() {
         </details>
       </li>
       <li>
-        <details>
+        <details
+          open={isOpenSubmenu === "exam-info"}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsOpenSubmenu("exam-info");
+          }}
+        >
           <summary className="font-semibold  text-md my-auto">
             পরীক্ষা সম্পর্কিত তথ্য
           </summary>
@@ -619,7 +676,13 @@ export default function MenuItems() {
         </details>
       </li>
       <li>
-        <details>
+        <details
+          open={isOpenSubmenu === "online-app-info"}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsOpenSubmenu("online-app-info");
+          }}
+        >
           <summary className="font-semibold  text-md my-auto">
             অনলাইন আবেদন
           </summary>
