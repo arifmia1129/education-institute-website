@@ -1,18 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 
 export default function MenuItems() {
-  const [isOpenSubmenu, setIsOpenSubmenu] = useState(null);
+  const { t } = useTranslation();
 
-  useEffect(() => {
-    let timeoutId;
-    if (isOpenSubmenu) {
-      timeoutId = setTimeout(() => {
-        setIsOpenSubmenu(null);
-      }, 20000);
-    }
-    return () => clearTimeout(timeoutId);
-  }, [isOpenSubmenu]);
+  const [isOpenSubmenu, setIsOpenSubmenu] = useState(null);
 
   return (
     <>
@@ -25,7 +18,7 @@ export default function MenuItems() {
           }
           to="/"
         >
-          প্রথম পাতা
+          {t("firstPage")}
         </NavLink>
       </li>
       <li>
@@ -33,11 +26,13 @@ export default function MenuItems() {
           open={isOpenSubmenu === "admistration-info"}
           onClick={(e) => {
             e.preventDefault();
-            setIsOpenSubmenu("admistration-info");
+            setIsOpenSubmenu(
+              isOpenSubmenu === "admistration-info" ? null : "admistration-info"
+            );
           }}
         >
           <summary className="font-semibold  text-md my-auto">
-            প্রশাসনিক তথ্য
+            {t("administrationInfo")}
           </summary>
           <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
             <li>
@@ -49,7 +44,7 @@ export default function MenuItems() {
                 }
                 to="/management-commite"
               >
-                ব্যবস্থাপনা কমিটি
+                {t("managingCommittee")}
               </NavLink>
             </li>
             <li>
@@ -61,7 +56,7 @@ export default function MenuItems() {
                 }
                 to="/teachers-information"
               >
-                শিক্ষকদের তথ্য
+                {t("teachersInfo")}
               </NavLink>
             </li>
             <li>
@@ -73,7 +68,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                কর্মচারীদের তথ্য
+                {t("employeesInfo")}
               </NavLink>
             </li>
             <li>
@@ -85,7 +80,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                অনুমোদিত এবং পূরণকৃত শিক্ষক/কর্মচারীর পদের সংখ্যা
+                {t("totalEmployees")}
               </NavLink>
             </li>
           </ul>
@@ -96,11 +91,13 @@ export default function MenuItems() {
           open={isOpenSubmenu === "institute-info"}
           onClick={(e) => {
             e.preventDefault();
-            setIsOpenSubmenu("institute-info");
+            setIsOpenSubmenu(
+              isOpenSubmenu === "institute-info" ? null : "institute-info"
+            );
           }}
         >
           <summary className="font-semibold  text-md my-auto">
-            প্রাতিষ্ঠানিক তথ্য
+            {t("instituteInfo")}
           </summary>
           <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
             <li>
@@ -110,9 +107,9 @@ export default function MenuItems() {
                     ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
                     : "font-semibold  text-md"
                 }
-                to="/management-commite"
+                to="/history"
               >
-                ইতিহাস ও পরিচিতি
+                {t("history")}
               </NavLink>
             </li>
             <li>
@@ -124,7 +121,7 @@ export default function MenuItems() {
                 }
                 to="/teachers-information"
               >
-                এমপি ও জাতীয়করণের তথ্য
+                {t("mpoInfo")}
               </NavLink>
             </li>
             <li>
@@ -136,7 +133,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                ভূমির তপসিল
+                {t("landInfo")}
               </NavLink>
             </li>
             <li>
@@ -148,7 +145,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                ভূমি মালিকানা সংক্রান্ত তথ্য
+                {t("landOwnerInfo")}
               </NavLink>
             </li>
             <li>
@@ -160,7 +157,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                শিক্ষক উপস্থিতি
+                {t("teachersPresentInfo")}
               </NavLink>
             </li>
             <li>
@@ -172,7 +169,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                কর্মচারী উপস্থিতি
+                {t("employeesPresentInfo")}
               </NavLink>
             </li>
             <li>
@@ -184,7 +181,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                সফলতার গল্প
+                {t("successStories")}
               </NavLink>
             </li>
             <li>
@@ -196,7 +193,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                ভবনের তথ্য
+                {t("buildingInfo")}
               </NavLink>
             </li>
             <li>
@@ -208,7 +205,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                গবেষণাগার
+                {t("laboratoryInfo")}
               </NavLink>
             </li>
             <li>
@@ -220,7 +217,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                খেলার মাঠ
+                {t("fieldInfo")}
               </NavLink>
             </li>
             <li>
@@ -232,7 +229,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                কম্পিউটার ল্যাব
+                {t("computerLab")}
               </NavLink>
             </li>
             <li>
@@ -244,7 +241,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                মাল্টিমিডিয়া ক্লাস রুম
+                {t("multimediaClass")}
               </NavLink>
             </li>
             <li>
@@ -256,7 +253,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                ক্রীড়া ও সাংস্কৃতিক কার্যক্রম
+                {t("extraCurriculumInfo")}
               </NavLink>
             </li>
             <li>
@@ -268,7 +265,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                পরিচ্ছন্নতা, শরীরচর্চা এবং স্যানিটেশন
+                {t("cleanExercisesInfo")}
               </NavLink>
             </li>
           </ul>
@@ -279,11 +276,13 @@ export default function MenuItems() {
           open={isOpenSubmenu === "class-info"}
           onClick={(e) => {
             e.preventDefault();
-            setIsOpenSubmenu("class-info");
+            setIsOpenSubmenu(
+              isOpenSubmenu === "class-info" ? null : "class-info"
+            );
           }}
         >
           <summary className="font-semibold  text-md my-auto">
-            পাঠদান ও স্বীকৃতি প্রদান সংক্রান্ত তথ্য
+            {t("teachingInfo")}
           </summary>
           <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
             <li>
@@ -295,7 +294,7 @@ export default function MenuItems() {
                 }
                 to="/management-commite"
               >
-                শপথ বাক্য
+                {t("oathInfo")}
               </NavLink>
             </li>
             <li>
@@ -307,7 +306,7 @@ export default function MenuItems() {
                 }
                 to="/teachers-information"
               >
-                ক্লাস রুটিন
+                {t("classRoutinesInfo")}
               </NavLink>
             </li>
             <li>
@@ -319,7 +318,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                শ্রেণি কক্ষ
+                {t("classInfo")}
               </NavLink>
             </li>
             <li>
@@ -331,7 +330,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                ফি প্রদান
+                {t("feeInfo")}
               </NavLink>
             </li>
             <li>
@@ -343,7 +342,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                পাঠাসূচি
+                {t("curriculumInfo")}
               </NavLink>
             </li>
             <li>
@@ -355,7 +354,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                আসন সংখ্যা
+                {t("seatInfo")}
               </NavLink>
             </li>
             <li>
@@ -367,7 +366,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                বই এর তালিকা
+                {t("bookListInfo")}
               </NavLink>
             </li>
             <li>
@@ -379,7 +378,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                ইউনিফর্ম
+                {t("uniformInfo")}
               </NavLink>
             </li>
             <li>
@@ -391,19 +390,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                আচরণ বিধি
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                পাঠদানের অনুমতি ও স্বীকৃতি
+                {t("ruleInfo")}
               </NavLink>
             </li>
           </ul>
@@ -414,11 +401,15 @@ export default function MenuItems() {
           open={isOpenSubmenu === "extra-activities-info"}
           onClick={(e) => {
             e.preventDefault();
-            setIsOpenSubmenu("extra-activities-info");
+            setIsOpenSubmenu(
+              isOpenSubmenu === "extra-activities-info"
+                ? null
+                : "extra-activities-info"
+            );
           }}
         >
           <summary className="font-semibold  text-md my-auto">
-            সহপাঠ কার্যক্রম
+            {t("coCurriculumInfo")}
           </summary>
           <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
             <li>
@@ -430,7 +421,7 @@ export default function MenuItems() {
                 }
                 to="/management-commite"
               >
-                স্কাউট
+                {t("scoutInfo")}
               </NavLink>
             </li>
             <li>
@@ -442,7 +433,7 @@ export default function MenuItems() {
                 }
                 to="/teachers-information"
               >
-                বিজ্ঞান ক্লাব
+                {t("scienceClub")}
               </NavLink>
             </li>
             <li>
@@ -454,7 +445,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                সাংস্কৃতিক ক্লাব
+                {t("cultureClub")}
               </NavLink>
             </li>
             <li>
@@ -466,7 +457,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                শিক্ষা ক্লাব
+                {t("educationClub")}
               </NavLink>
             </li>
             <li>
@@ -478,7 +469,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                খেলাধুলা ক্লাব
+                {t("playingsClub")}
               </NavLink>
             </li>
             <li>
@@ -490,7 +481,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                আইসিটি ক্লাব
+                {t("ICTClub")}
               </NavLink>
             </li>
             <li>
@@ -502,7 +493,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                অন্যান্য কার্যক্রম
+                {t("otherActivity")}
               </NavLink>
             </li>
           </ul>
@@ -513,11 +504,13 @@ export default function MenuItems() {
           open={isOpenSubmenu === "student-info"}
           onClick={(e) => {
             e.preventDefault();
-            setIsOpenSubmenu("student-info");
+            setIsOpenSubmenu(
+              isOpenSubmenu === "student-info" ? null : "student-info"
+            );
           }}
         >
           <summary className="font-semibold  text-md my-auto">
-            ছাত্র ছাত্রীদের তথ্য
+            {t("studentInfo")}
           </summary>
           <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
             <li>
@@ -529,7 +522,7 @@ export default function MenuItems() {
                 }
                 to="/management-commite"
               >
-                শিক্ষার্থী আইডি অনুসন্ধান
+                {t("searchStudentId")}
               </NavLink>
             </li>
             <li>
@@ -541,7 +534,7 @@ export default function MenuItems() {
                 }
                 to="/teachers-information"
               >
-                ক্লাস ভিত্তিক শিক্ষার্থীদের তথ্য
+                {t("studentInfoByClass")}
               </NavLink>
             </li>
             <li>
@@ -553,7 +546,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                উপবৃত্তি প্রাপ্ত শিক্ষার্থীদের তথ্য
+                {t("stipenerInfo")}
               </NavLink>
             </li>
             <li>
@@ -565,7 +558,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                মেধাবী শিক্ষার্থীদের তথ্য
+                {t("talentStudentInfo")}
               </NavLink>
             </li>
             <li>
@@ -577,7 +570,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                ক্লাস ভিত্তিক শিক্ষার্থীর উপস্থিতি
+                {t("presentStudentByClass")}
               </NavLink>
             </li>
             <li>
@@ -589,7 +582,7 @@ export default function MenuItems() {
                 }
                 to="/employee-information"
               >
-                প্রাক্তন মেধাবী শিক্ষার্থীদের তথ্য
+                {t("pastTalentStudentInfo")}
               </NavLink>
             </li>
           </ul>
@@ -600,11 +593,13 @@ export default function MenuItems() {
           open={isOpenSubmenu === "admission-info"}
           onClick={(e) => {
             e.preventDefault();
-            setIsOpenSubmenu("admission-info");
+            setIsOpenSubmenu(
+              isOpenSubmenu === "admission-info" ? null : "admission-info"
+            );
           }}
         >
           <summary className="font-semibold  text-md my-auto">
-            ভর্তি সংক্রান্ত তথ্য
+            {t("admissionInfo")}
           </summary>
           <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
             <li>
@@ -616,7 +611,7 @@ export default function MenuItems() {
                 }
                 to="/admission"
               >
-                ভর্তি আবেদন - ২০২৪
+                {t("admissionApplications")}
               </NavLink>
             </li>
           </ul>
@@ -627,11 +622,13 @@ export default function MenuItems() {
           open={isOpenSubmenu === "exam-info"}
           onClick={(e) => {
             e.preventDefault();
-            setIsOpenSubmenu("exam-info");
+            setIsOpenSubmenu(
+              isOpenSubmenu === "exam-info" ? null : "exam-info"
+            );
           }}
         >
           <summary className="font-semibold  text-md my-auto">
-            পরীক্ষা সম্পর্কিত তথ্য
+            {t("examInfo")}
           </summary>
           <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
             <li>
@@ -643,7 +640,7 @@ export default function MenuItems() {
                 }
                 to="/admission"
               >
-                পরীক্ষা ফলাফল (আইডি অনুসন্ধান দিয়ে রেজাল্ট)
+                {t("examResults")}
               </NavLink>
             </li>
             <li>
@@ -655,7 +652,7 @@ export default function MenuItems() {
                 }
                 to="/admission"
               >
-                পাশকৃত শিক্ষার্থীদের তথ্য
+                {t("passedStudent")}
               </NavLink>
             </li>
             <li>
@@ -667,7 +664,7 @@ export default function MenuItems() {
                 }
                 to="/admission"
               >
-                অকৃতকার্য শিক্ষার্থীদের তথ্য
+                {t("failedStudent")}
               </NavLink>
             </li>
           </ul>
@@ -678,11 +675,13 @@ export default function MenuItems() {
           open={isOpenSubmenu === "online-app-info"}
           onClick={(e) => {
             e.preventDefault();
-            setIsOpenSubmenu("online-app-info");
+            setIsOpenSubmenu(
+              isOpenSubmenu === "online-app-info" ? null : "online-app-info"
+            );
           }}
         >
           <summary className="font-semibold  text-md my-auto">
-            অনলাইন আবেদন
+            {t("onlineApplication")}
           </summary>
           <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
             <li>
@@ -694,7 +693,7 @@ export default function MenuItems() {
                 }
                 to="/admission"
               >
-                ছুটির জন্য আবেদন (ছাত্র/ছাত্রী)
+                {t("studentLeaveApplication")}
               </NavLink>
             </li>
             <li>
@@ -706,7 +705,7 @@ export default function MenuItems() {
                 }
                 to="/admission"
               >
-                ছুটির জন্য আবেদন (শিক্ষক)
+                {t("teacherLeaveApplication")}
               </NavLink>
             </li>
             <li>
@@ -718,7 +717,7 @@ export default function MenuItems() {
                 }
                 to="/admission"
               >
-                প্রত্যয়নের জন্য আবেদন
+                {t("certificationApplication")}
               </NavLink>
             </li>
             <li>
@@ -730,7 +729,7 @@ export default function MenuItems() {
                 }
                 to="/admission"
               >
-                প্রসংশা পত্রের জন্য আবেদন
+                {t("recommendationApplication")}
               </NavLink>
             </li>
           </ul>
@@ -746,7 +745,7 @@ export default function MenuItems() {
           }
           to="/notice"
         >
-          নোটিশ
+          {t("notice")}
         </NavLink>
       </li>
 
@@ -759,7 +758,7 @@ export default function MenuItems() {
           }
           to="/gallery"
         >
-          ফটো গ্যালারি
+          {t("photoGallery")}
         </NavLink>
       </li>
       <li>
@@ -771,7 +770,7 @@ export default function MenuItems() {
           }
           to="/communicate"
         >
-          যোগাযোগ
+          {t("contactInfo")}
         </NavLink>
       </li>
       <li>
@@ -783,7 +782,7 @@ export default function MenuItems() {
           }
           to="/result"
         >
-          ই-স্কুল
+          {t("eSchool")}
         </NavLink>
       </li>
     </>

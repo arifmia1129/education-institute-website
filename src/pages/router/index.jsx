@@ -27,7 +27,7 @@ const Index = () => {
         <Navbar />
       </div>
       <div className="bg-primary p-2 text-white flex items-center">
-        <p className="font-bold text-lg">সর্বশেষ:</p>
+        <p className="font-bold text-lg">{t("latest")}:</p>
         <Marquee>{t("breakingNews")}</Marquee>
       </div>
       <div className="mx-2 md:mx-5">
@@ -36,7 +36,7 @@ const Index = () => {
           <Route path="/news" element={<AllNews />} />
           <Route path="/notice" element={<AllNotice />} />
           <Route path="/event" element={<AllEvent />} />
-          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/history" element={<AboutUs />} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/admission" element={<Admission />} />
           <Route path="/academic" element={<Academic />}>

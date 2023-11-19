@@ -1,4 +1,21 @@
+import { useEffect, useState } from "react";
+import api from "../../utils/axios.config";
+import { baseUrl } from "../../utils/url";
+
 const AboutUs = () => {
+  const [history, setHistory] = useState("");
+
+  const handleGetHistory = async () => {
+    const { data } = await api.get(`${baseUrl}/about`);
+
+    if (data?.success) {
+      setHistory(data?.data?.history);
+    }
+  };
+
+  useEffect(() => {
+    handleGetHistory();
+  }, []);
   return (
     <div>
       <div className="relative">
@@ -17,17 +34,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <p className="my-5">
-        কোচাসার উচ্চ বিদ্যালয়, যা ১৯৬২ সালে প্রতিষ্ঠিত হয়, একটি শ্রেষ্ঠ শিক্ষা
-        প্রতিষ্ঠানের রূপে অত্যন্ত গর্বিত। এই বিদ্যালয়ে প্রায় ৮০০ শিক্ষার্থী
-        তাদের পাঠ্যক্রম পূর্ণ করছেন। এখানে শ্রেণি ৬ থেকে ১০ পর্যন্ত পাঠ পাচ্ছে
-        এবং ৯ এবং ১০ শ্রেণির জন্য বিজ্ঞান এবং শিল্প দুটি বিভাগ রয়েছে।
-        বিদ্যালয়ে মোট ১৫ উপাধ্যায়ী কাজ করছেন, যার মধ্যে মুখ্য শিক্ষক মোঃ
-        রফিকুল ইসলাম এবং উপ-মুখ্য শিক্ষক মোঃ আইয়ুব হোসেন অত্যন্ত প্রমুখ।
-        বিদ্যালয়ে একটি সুন্দর খেলাধীন মাঠ আছে যেখানে শিক্ষার্থীরা খেলাধীন হয়ে
-        মনোবিবেক বৃদ্ধি করতে পারে। ছাত্রিদের জন্য একটি সাধারণ কক্ষা এবং অফিস
-        কক্ষও বিদ্যালয়ে রয়েছে।
-      </p>
+      <p className="my-5">{history}</p>
     </div>
   );
 };

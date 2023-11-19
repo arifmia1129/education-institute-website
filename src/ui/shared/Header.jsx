@@ -6,11 +6,14 @@ import { BsLinkedin } from "react-icons/bs";
 import { AiFillYoutube } from "react-icons/ai";
 import img50 from "../../assets/50.png";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./Navbar.css";
+import logo from "../../assets/logo.png";
+import { AuthContext } from "../../App";
 
 export default function Header() {
   const [currentLangCode, setCurrentLangCode] = useState("");
+  const { isLoggedIn, handleLoggedIn } = useContext(AuthContext);
 
   const { i18n, t } = useTranslation();
 
@@ -33,11 +36,22 @@ export default function Header() {
     <div>
       <div className="mt-2 justify-end hidden lg:flex">
         <div>
-          <Link to="/admin-login">
-            <button className="btn btn-primary text-white btn-sm">
-              {t("loginBtnTxt")}
+          {isLoggedIn ? (
+            <button
+              onClick={() => {
+                localStorage.removeItem("token");
+                handleLoggedIn();
+              }}
+            >
+              {t("logoutBtnTxt")}
             </button>
-          </Link>
+          ) : (
+            <Link to="/admin-login">
+              <button className="btn btn-primary text-white btn-sm">
+                {t("loginBtnTxt")}
+              </button>
+            </Link>
+          )}
           <select
             value={currentLangCode}
             onChange={onChangeLang}
@@ -54,12 +68,7 @@ export default function Header() {
           to="/"
         >
           <div className="flex items-center">
-            <img
-              width={60}
-              height={60}
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Government_Seal_of_Bangladesh.svg/800px-Government_Seal_of_Bangladesh.svg.png"
-              alt=""
-            />
+            <img width={80} height={80} src={logo} alt="" />
             <div className="mx-2">
               <h1 className="font-bold  md:text-3xl text-primary">
                 {t("name")}

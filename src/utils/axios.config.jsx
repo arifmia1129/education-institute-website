@@ -14,7 +14,7 @@ api.interceptors.request.use(
 
     // Set Bearer token if it exists
     if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+      config.headers.Authorization = token;
     }
 
     // Set Content-Type header based on request type

@@ -3,10 +3,37 @@ import "slick-carousel/slick/slick-theme.css";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import Index from "./pages/router";
 import "./i18n";
+import { Toaster } from "react-hot-toast";
+import { createContext, useEffect, useState } from "react";
+
+export const AuthContext = createContext(null);
+
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLoggedIn = () => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    if (token) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  };
+
+  useEffect(() => {
+    handleLoggedIn();
+  }, []);
+
+  const value = {
+    isLoggedIn,
+    handleLoggedIn,
+  };
+
   return (
     <div className="relative">
-      <Index />
+      <AuthContext.Provider value={value}>
+        <Index />
+      </AuthContext.Provider>
       <div className="fixed right-0 bottom-1/3 transform -translate-y-1/2">
         <button
           onClick={() => window.my_modal_5.showModal()}
@@ -34,6 +61,7 @@ function App() {
           </div>
         </form>
       </dialog>
+      <Toaster />
     </div>
   );
 }

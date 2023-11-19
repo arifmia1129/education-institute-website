@@ -1,31 +1,45 @@
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import api from "../../utils/axios.config";
+import { useContext, useState } from "react";
+import Loading from "../../ui/shared/Loading";
+import { AuthContext } from "../../App";
 
 const AdminLogin = () => {
+  const [processing, setIsProcessing] = useState(false);
+  const { handleLoggedIn } = useContext(AuthContext);
+
   const {
     register,
+    reset,
     formState: { errors },
+    handleSubmit,
   } = useForm();
 
-  //   const onSubmit = async (userData) => {
-  //     setIsProcessing(true);
-  //     try {
-  //       const { data } = await api.post("user/login", userData);
+  const onSubmit = async (userData) => {
+    setIsProcessing(true);
+    try {
+      const { data } = await api.post("auth/login", userData);
 
-  //       if (data.success) {
-  //         localStorage.removeItem("user");
-  //         localStorage.setItem("user", JSON.stringify(data.data));
-  //         toast.success(data.message);
-  //         reset();
-  //         navigate(from, { replace: true });
-  //       } else {
-  //         toast.error(data.message);
-  //       }
-  //     } catch (error) {
-  //       toast.error(error.response.data.error);
-  //     } finally {
-  //       setIsProcessing(false);
-  //     }
-  //   };
+      if (data.success) {
+        localStorage.removeItem("token");
+        localStorage.setItem("token", JSON.stringify(data.data.accessToken));
+        toast.success(data.message);
+        reset();
+        handleLoggedIn();
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.response.data.error);
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  if (processing) {
+    return <Loading />;
+  }
 
   return (
     <div className="flex items-center justify-center h-[60vh] mb-10">
@@ -35,24 +49,24 @@ const AdminLogin = () => {
             Admin Login
           </h1>
           <div className="flex justify-center items-center w-full">
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="space-y-4">
                 <div className="w-full max-w-md">
                   <label htmlFor="mobile" className="block text-white">
                     User ID
                   </label>
                   <input
-                    {...register("mobile", {
-                      required: "Mobile number is required",
+                    {...register("id", {
+                      required: "User ID is required",
                     })}
                     type="text"
-                    id="mobile"
+                    id="id"
                     placeholder="Enter a valid user ID"
                     className="input w-full md:w-96"
                   />
-                  {errors.mobile && (
+                  {errors.id && (
                     <span className="text-red-500 text-sm">
-                      {errors.mobile.message}
+                      {errors.id.message}
                     </span>
                   )}
                 </div>

@@ -476,6 +476,7 @@ export default function Admission() {
                     className="select select-bordered"
                     placeholder="পূর্ববর্তী শ্রেণী নির্বাচন করুন"
                   >
+                    <option value="FIVE">FIVE</option>
                     <option value="SIX">SIX</option>
                     <option value="SEVEN">SEVEN</option>
                     <option value="EIGHT">EIGHT</option>
