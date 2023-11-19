@@ -4,14 +4,12 @@ import { NavLink } from "react-router-dom";
 export default function MenuItems() {
   const [isOpenSubmenu, setIsOpenSubmenu] = useState(null);
 
-  console.log(isOpenSubmenu);
-
   useEffect(() => {
     let timeoutId;
     if (isOpenSubmenu) {
       timeoutId = setTimeout(() => {
         setIsOpenSubmenu(null);
-      }, 30000);
+      }, 20000);
     }
     return () => clearTimeout(timeoutId);
   }, [isOpenSubmenu]);

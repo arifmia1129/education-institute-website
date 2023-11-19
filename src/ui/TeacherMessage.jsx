@@ -1,6 +1,6 @@
 import Slider from "react-slick";
 import HeadTeacherMessage from "./HeadTeacherMessage";
-import AssistantHeadTeacherMessage from "./AssistantHeadTeacherMessage";
+import PresidentMessage from "./PresidentMessage";
 
 function TeacherMessage() {
   var settings = {
@@ -15,7 +15,7 @@ function TeacherMessage() {
   return (
     <Slider className="w-full my-10" autoplay={true} {...settings}>
       <HeadTeacherMessage />
-      <AssistantHeadTeacherMessage />
+      <PresidentMessage />
     </Slider>
   );
 }

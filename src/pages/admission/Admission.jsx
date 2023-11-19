@@ -127,7 +127,7 @@ export default function Admission() {
         applicationPage.style.height = "";
 
         // Reset the selectedImage state to null
-        setSelectedImage(null);
+        // setSelectedImage(null);
       });
   };
 
@@ -139,7 +139,7 @@ export default function Admission() {
             ভর্তি আবেদন-২০২৩
           </h1>
           <div>
-            <CountDown monthDay="11-14" />
+            <CountDown monthDay="12-31" />
           </div>
           <p className="font-bold text-lg">
             <span className="text-red-500 font-bold">*</span> সমস্ত তথ্য অবশ্যই
@@ -804,9 +804,9 @@ export default function Admission() {
         <div>
           <div
             id="applicationPage"
-            className="flex justify-center items-center w-[210mm] h-[305mm] m-auto "
+            className="flex justify-center items-center w-full h-[305mm]"
           >
-            <div className=" h-[290mm]  bg-contain  w-[200mm] relative  rounded  p-10 border-2 border-green-500">
+            <div className=" h-[290mm]  bg-contain  w-[200mm] relative  rounded  p-10 border-2 border-green-500 m-auto">
               <div className="flex items-center mb-5">
                 <img
                   width={60}
