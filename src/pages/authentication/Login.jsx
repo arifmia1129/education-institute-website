@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import api from "../../utils/axios.config";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Loading from "../../ui/shared/Loading";
 import { AuthContext } from "../../App";
+import { useNavigate } from "react-router-dom";
 
 const AdminLogin = () => {
   const [processing, setIsProcessing] = useState(false);
@@ -15,6 +16,21 @@ const AdminLogin = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+
+  const { isLoggedIn, isLoading } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    handleLoggedIn();
+    if (isLoggedIn && !isLoading) {
+      navigate("/dashboard");
+    }
+  }, [isLoggedIn, navigate, isLoading]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   const onSubmit = async (userData) => {
     setIsProcessing(true);
@@ -31,7 +47,7 @@ const AdminLogin = () => {
         toast.error(data.message);
       }
     } catch (error) {
-      toast.error(error.response.data.error);
+      toast.error(error.response.data.message);
     } finally {
       setIsProcessing(false);
     }

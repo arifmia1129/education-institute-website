@@ -18,6 +18,7 @@ import AdminLogin from "../authentication/Login";
 import Admission from "../admission/Admission";
 import Marquee from "react-fast-marquee";
 import { useTranslation } from "react-i18next";
+import Dashboard from "../dashboard/Dashboard";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -48,6 +49,9 @@ const Index = () => {
             <Route path="assistance-teacher" element={<AssistanceTeachers />} />
             <Route path="managing-member" element={<ManagingMembers />} />
           </Route>
+
+          <Route path="/dashboard" element={<Dashboard />}></Route>
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

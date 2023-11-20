@@ -5,19 +5,23 @@ import Index from "./pages/router";
 import "./i18n";
 import { Toaster } from "react-hot-toast";
 import { createContext, useEffect, useState } from "react";
+import Loading from "./ui/shared/Loading";
 
 export const AuthContext = createContext(null);
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLoggedIn = () => {
+    setIsLoading(true);
     const token = JSON.parse(localStorage.getItem("token"));
     if (token) {
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);
     }
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -27,7 +31,12 @@ function App() {
   const value = {
     isLoggedIn,
     handleLoggedIn,
+    isLoading,
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className="relative">
