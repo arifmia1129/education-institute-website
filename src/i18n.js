@@ -92,6 +92,7 @@ i18n.use(initReactI18next).init({
         addTeacherBtn: "Add Teacher",
         employeeInfo: "Employee Information",
         addEmployeeBtn: "Add Employee",
+        managementInfo: "Management Information",
       },
     },
     bn: {
@@ -179,6 +180,7 @@ i18n.use(initReactI18next).init({
         addTeacherBtn: "শিক্ষক যুক্ত করুন",
         addEmployeeBtn: "কর্মচারী যুক্ত করুন",
         employeeInfo: "কর্মচারীদের তথ্য",
+        managementInfo: "ম্যানেজিং কমিটি",
       },
     },
   },

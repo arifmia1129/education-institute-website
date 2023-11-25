@@ -24,6 +24,9 @@ import Teacher from "../teacher/Teacher";
 import AddTeacher from "../dashboard/AddTeacher";
 import Employee from "../employee/Employee";
 import AddEmployee from "../dashboard/AddEmployee";
+import Management from "../management/Management";
+import AddManagement from "../dashboard/AddManagement";
+import TotalEmployee from "../totalEmployee/TotalEmployee";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -41,6 +44,8 @@ const Index = () => {
           <Route path="/" element={<Home />} />
           <Route path="/teacher" element={<Teacher />} />
           <Route path="/employee" element={<Employee />} />
+          <Route path="/management" element={<Management />} />
+          <Route path="/total-employee" element={<TotalEmployee />} />
 
           <Route path="/news" element={<AllNews />} />
           <Route path="/notice" element={<AllNotice />} />
@@ -62,6 +67,7 @@ const Index = () => {
             <Route path="add-history" element={<AddSchoolHistory />} />
             <Route path="add-teacher" element={<AddTeacher />} />
             <Route path="add-employee" element={<AddEmployee />} />
+            <Route path="add-management" element={<AddManagement />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />
