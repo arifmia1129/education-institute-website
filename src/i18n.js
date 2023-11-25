@@ -91,6 +91,7 @@ i18n.use(initReactI18next).init({
         teacherList: "All Teaher List",
         addTeacherBtn: "Add Teacher",
         employeeInfo: "Employee Information",
+        addEmployeeBtn: "Add Employee",
       },
     },
     bn: {
@@ -176,6 +177,7 @@ i18n.use(initReactI18next).init({
         addSchoolHistory: "স্কুলের ইতিহাস যুক্ত করুন",
         teacherList: "শিক্ষক শিক্ষিকা তালিকা",
         addTeacherBtn: "শিক্ষক যুক্ত করুন",
+        addEmployeeBtn: "কর্মচারী যুক্ত করুন",
         employeeInfo: "কর্মচারীদের তথ্য",
       },
     },
