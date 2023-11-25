@@ -20,6 +20,7 @@ import Marquee from "react-fast-marquee";
 import { useTranslation } from "react-i18next";
 import Dashboard from "../dashboard/Dashboard";
 import AddSchoolHistory from "../dashboard/AddSchoolHistory";
+import Teacher from "../teacher/Teacher";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -35,6 +36,8 @@ const Index = () => {
       <div className="mx-2 md:mx-5">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/teacher" element={<Teacher />} />
+
           <Route path="/news" element={<AllNews />} />
           <Route path="/notice" element={<AllNotice />} />
           <Route path="/event" element={<AllEvent />} />

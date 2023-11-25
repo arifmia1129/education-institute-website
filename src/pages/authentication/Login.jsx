@@ -29,10 +29,6 @@ const AdminLogin = () => {
     }
   }, [isLoggedIn, navigate, isLoading]);
 
-  if (isLoading) {
-    return <Loading />;
-  }
-
   const onSubmit = async (userData) => {
     setIsProcessing(true);
     try {
