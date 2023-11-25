@@ -89,6 +89,7 @@ i18n.use(initReactI18next).init({
         eSchool: "E-School",
         addSchoolHistory: "Add School History",
         teacherList: "All Teaher List",
+        addTeacherBtn: "Add Teacher",
       },
     },
     bn: {
@@ -173,6 +174,7 @@ i18n.use(initReactI18next).init({
         eSchool: "ই-স্কুল",
         addSchoolHistory: "স্কুলের ইতিহাস যুক্ত করুন",
         teacherList: "শিক্ষক শিক্ষিকা তালিকা",
+        addTeacherBtn: "শিক্ষক যুক্ত করুন",
       },
     },
   },

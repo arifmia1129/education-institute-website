@@ -21,6 +21,8 @@ import { useTranslation } from "react-i18next";
 import Dashboard from "../dashboard/Dashboard";
 import AddSchoolHistory from "../dashboard/AddSchoolHistory";
 import Teacher from "../teacher/Teacher";
+import AddTeacher from "../dashboard/AddTeacher";
+import Employee from "../employee/Employee";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -37,6 +39,7 @@ const Index = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/teacher" element={<Teacher />} />
+          <Route path="/employee" element={<Employee />} />
 
           <Route path="/news" element={<AllNews />} />
           <Route path="/notice" element={<AllNotice />} />
@@ -56,6 +59,7 @@ const Index = () => {
 
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="add-history" element={<AddSchoolHistory />} />
+            <Route path="add-teacher" element={<AddTeacher />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />
