@@ -10,7 +10,7 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     // Get token from local storage
-    const { token } = JSON.parse(localStorage.getItem("user")) || {};
+    const token = JSON.parse(localStorage.getItem("token"));
 
     // Set Bearer token if it exists
     if (token) {
@@ -44,8 +44,8 @@ api.interceptors.response.use(
       error.response &&
       (error.response.status === 401 || error.response.status === 403)
     ) {
-      // Remove user from local storage
-      localStorage.removeItem("user");
+      // Remove token from local storage
+      localStorage.removeItem("token");
     }
     return Promise.reject(error);
   }

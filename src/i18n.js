@@ -87,6 +87,7 @@ i18n.use(initReactI18next).init({
         photoGallery: "Photo Gallery",
         contactInfo: "Contact",
         eSchool: "E-School",
+        addSchoolHistory: "Add School History",
       },
     },
     bn: {
@@ -169,6 +170,7 @@ i18n.use(initReactI18next).init({
         photoGallery: "ফটো গ্যালারি",
         contactInfo: "যোগাযোগ",
         eSchool: "ই-স্কুল",
+        addSchoolHistory: "স্কুলের ইতিহাস যুক্ত করুন",
       },
     },
   },

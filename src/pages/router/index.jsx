@@ -25,7 +25,7 @@ const Index = () => {
   const { t } = useTranslation();
   return (
     <div>
-      <div className="sticky top-0 z-50">
+      <div className="sticky top-0 z-40">
         <Navbar />
       </div>
       <div className="bg-primary p-2 text-white flex items-center">

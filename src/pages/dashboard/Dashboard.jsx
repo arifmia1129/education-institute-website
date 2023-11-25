@@ -1,9 +1,19 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { IoMdArrowDropright } from "react-icons/io";
+import { useTranslation } from "react-i18next";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../App";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import Loading from "../../ui/shared/Loading";
 
-export default function Dashboard() {
+const Dashboard = () => {
+  const activeClass =
+    "text-primary flex justify-between items-center border-b-2 rounded-none border-r-4 border-r-primary";
+  const inactiveClass =
+    "text-primary flex justify-between items-center border-b-2 rounded-none ";
+
+  const { t } = useTranslation();
+
   const { isLoggedIn, isLoading, handleLoggedIn } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -22,30 +32,50 @@ export default function Dashboard() {
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <label
-        htmlFor="my-drawer-2"
-        className="btn btn-primary drawer-button lg:hidden"
-      >
-        Open drawer
-      </label>
-      <div className="drawer-content p-2">
-        {/* Page content here */}
-
+      <div className="flex justify-start w-full mt-5 relative">
+        <label
+          htmlFor="my-drawer-2"
+          tabIndex={0}
+          className="btn btn-primary drawer-button lg:hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
+          </svg>
+        </label>
+      </div>
+      <div className="drawer-content flex flex-col items-center p-2 md:p-5">
         <Outlet />
       </div>
       <div className="drawer-side">
-        <label
-          htmlFor="my-drawer-2"
-          aria-label="close sidebar"
-          className="drawer-overlay"
-        ></label>
-        <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+        <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+        <ul className="menu p-4 w-[80vw] lg:w-80 bg-white z-50 md:static relative top-52">
           {/* Sidebar content here */}
           <li>
-            <NavLink to="add-history">Add School History</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? activeClass : inactiveClass
+              }
+              to="/dashboard/add-history"
+            >
+              <p>{t("addSchoolHistory")}</p>
+              <IoMdArrowDropright size={25} />
+            </NavLink>
           </li>
         </ul>
       </div>
     </div>
   );
-}
+};
+
+export default Dashboard;
