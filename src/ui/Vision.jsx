@@ -1,20 +1,28 @@
+import { useEffect, useState } from "react";
+import api from "../utils/axios.config";
+import { baseUrl } from "../utils/url";
+
 const Vision = () => {
+  const [mission, setVision] = useState("");
+
+  const langCode = localStorage.getItem("langCode");
+
+  useEffect(() => {
+    const handleGetVision = async () => {
+      const { data } = await api.get(`${baseUrl}/vision/${langCode}`);
+
+      if (data?.success) {
+        setVision(data?.data?.vision);
+      }
+    };
+    handleGetVision();
+  }, [langCode]);
   return (
     <div className=" my-10">
       <div className="w-full bg-primary text-white py-2 px-5 rounded border-l-4 border-l-red-500">
-        <h1 className="text-xl font-bold">আমাদের দর্শন</h1>
+        <h1 className="text-xl font-bold">Our Vision</h1>
       </div>
-      <p className="my-5">
-        আমাদের উচ্চ বিদ্যালয়ের দর্শন হলো একটি স্বপ্ন, একটি লক্ষ্য, এবং একটি
-        প্রতিশ্রুতি। আমরা প্রতিটি শিক্ষার্থীকে একটি শক্তিশালী শিক্ষা ও মানবিক
-        উন্নতির সাথে সম্পর্কিত বৃদ্ধির সৃষ্টি করতে প্রতিশ্রুতিবদ্ধ আছি। আমরা চাই
-        যে, আমাদের শিক্ষার্থীরা শিক্ষার আদর্শ নিয়ে চলে, তাদের প্রতিটি দিন নতুন
-        জ্ঞানের আগেই সম্পর্কিত মূল্যবান শিক্ষা প্রাপ্ত করে। আমরা উচ্চ মানকে
-        বজায় রাখতে সমর্থ এবং সম্মান্য শিক্ষকদের সাথে সহযোগিতা করতে প্রতিবদ্ধ।
-        আমরা একটি সৃজনশীল, সক্ষম এবং নৈতিকভাবে প্রশিক্ষিত প্রজন্ম নিয়ে যাওয়ার
-        দিকে এগিয়ে যাওয়া চাই। আমরা চাই আমাদের শিক্ষার্থীরা তাদের সমাজে সক্ষম
-        নাগরিক হিসেবে অবদান রাখতে প্রস্তুত হন।
-      </p>
+      <p className="my-5">{mission}</p>
     </div>
   );
 };

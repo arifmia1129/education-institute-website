@@ -12,7 +12,7 @@ const Statistics = () => {
   return (
     <div className=" my-10 ">
       <div className="w-full bg-primary text-white py-2 px-5 rounded border-l-4 border-l-red-500">
-        <h1 className="text-xl font-bold">বিদ্যালয়ের পরিসংখ্যান</h1>
+        <h1 className="text-xl font-bold">Statistic</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-center place-items-center">
         <div className="m-5">

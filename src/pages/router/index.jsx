@@ -31,6 +31,7 @@ import Contact from "../contact/Contact";
 import Eschool from "../eschool/Eschool";
 import Mpo from "../mpo/Mpo";
 import AddTotalEmployeeInfo from "../dashboard/AddTotalEmployeeInfo";
+import PhotoGallery from "../photoGallery/PhotoGallery";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -53,6 +54,7 @@ const Index = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/e-school" element={<Eschool />} />
           <Route path="/mpo" element={<Mpo />} />
+          <Route path="/photo-gallery" element={<PhotoGallery />} />
 
           <Route path="/news" element={<AllNews />} />
           <Route path="/notice" element={<AllNotice />} />

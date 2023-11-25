@@ -1,19 +1,28 @@
+import { useEffect, useState } from "react";
+import api from "../utils/axios.config";
+import { baseUrl } from "../utils/url";
+
 const Mission = () => {
+  const [mission, setMission] = useState("");
+
+  const langCode = localStorage.getItem("langCode");
+
+  useEffect(() => {
+    const handleGetMission = async () => {
+      const { data } = await api.get(`${baseUrl}/mission/${langCode}`);
+
+      if (data?.success) {
+        setMission(data?.data?.mission);
+      }
+    };
+    handleGetMission();
+  }, [langCode]);
   return (
     <div className=" my-10 ">
       <div className="w-full bg-primary text-white py-2 px-5 rounded border-l-4 border-l-red-500">
-        <h1 className="text-xl font-bold">আমাদের লক্ষ্য</h1>
+        <h1 className="text-xl font-bold">Our Mission</h1>
       </div>
-      <p className="my-5">
-        আমাদের মিশন হলো শিক্ষার মাধ্যমে আমরা যত্ন, উত্সাহ এবং উন্নতির পথে
-        শিক্ষার্থীদের নেতৃত্ব প্রদান করতে প্রতিশ্রুতি করেছি। আমরা চাই
-        শিক্ষার্থীরা না মাত্র শিক্ষার জন্য পঠনে আগ্রহী হন, বরং তারা তাদের
-        সামাজিক এবং নৈতিক দায়িত্ব সম্পর্কে সচেতন হওয়ার প্রেরণা পেতে। আমরা উচ্চ
-        মানের পাঠ্যক্রম প্রদান করে যা শিক্ষার্থীদের তাদের রচনাত্মক চিন্তা ও
-        সমস্যা সমাধানের দক্ষতা উন্নত করতে সাহায্য করে। আমরা চাই যে, বিদ্যালয়ের
-        পরিস্থিতি আমাদের শিক্ষার্থীদের উদ্দীপনা এবং উৎসাহ দেয়, যাতে তারা
-        নিজেদের শক্তিগুলি খোঁজে পেতে এবং আত্মবিশ্বাস অর্জন করতে সক্ষম হয়।
-      </p>
+      <p className="my-5">{mission}</p>
     </div>
   );
 };

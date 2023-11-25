@@ -22,8 +22,8 @@ const Home = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 place-content-center">
         <div className="col-span-3">
           <AboutUsBanner />
-          <Vision />
           <Mission />
+          <Vision />
           <Statistics />
           <StudentDetails />
         </div>
