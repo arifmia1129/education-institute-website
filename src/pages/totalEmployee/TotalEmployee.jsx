@@ -2,7 +2,7 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement, // Use BarElement for Bar chart
+  BarElement,
   Title,
   Tooltip,
   Legend,
@@ -52,16 +52,9 @@ export default function TotalEmployee() {
       },
     },
   };
-  const labels = [
-    "Allowed Teacher",
-    "Current Teacher",
-    "Male Teacher",
-    "Female Teacher",
-    "Allowed Employee",
-    "Current Employee",
-    "Male Employee",
-    "Female Employee",
-  ];
+
+  const labels = ["Allowed", "Current", "Male", "Female"];
+
   const data = {
     labels,
     datasets: [
@@ -72,18 +65,26 @@ export default function TotalEmployee() {
           totalEmployee?.currentTeacher,
           totalEmployee?.maleTeacher,
           totalEmployee?.femaleTeacher,
+        ],
+        borderColor: "#009f51",
+        backgroundColor: "#009f51",
+      },
+      {
+        label: "Total Other Employee",
+        data: [
           totalEmployee?.allowedOtherEmployee,
           totalEmployee?.currentOtherEmployee,
           totalEmployee?.maleOtherEmployee,
           totalEmployee?.femaleOtherEmployee,
         ],
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "#ffcc00",
+        backgroundColor: "#ffcc00",
       },
     ],
   };
+
   return (
-    <div>
+    <div className="p-5 w-full">
       <Bar options={options} data={data} />
     </div>
   );
