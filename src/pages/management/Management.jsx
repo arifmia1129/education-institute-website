@@ -3,6 +3,7 @@ import api from "../../utils/axios.config";
 import toast from "react-hot-toast";
 import Loading from "../../ui/shared/Loading";
 import { useTranslation } from "react-i18next";
+import PageHeader from "../../components/PageHeader";
 
 export default function Management() {
   const [processing, setIsProcessing] = useState(false);
@@ -36,10 +37,7 @@ export default function Management() {
   }
   return (
     <div className="p-2 md:p-5">
-      <h1 className="text-4xl font-bold text-primary">
-        {t("managementInfo")}:
-      </h1>
-
+      <PageHeader title={t("managementInfo")} />
       <div className="my-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {managements?.map((management) => (
           <div className="flex justify-center m-2" key={management._id}>

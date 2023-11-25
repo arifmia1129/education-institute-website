@@ -27,6 +27,7 @@ import AddEmployee from "../dashboard/AddEmployee";
 import Management from "../management/Management";
 import AddManagement from "../dashboard/AddManagement";
 import TotalEmployee from "../totalEmployee/TotalEmployee";
+import Contact from "../contact/Contact";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -46,6 +47,7 @@ const Index = () => {
           <Route path="/employee" element={<Employee />} />
           <Route path="/management" element={<Management />} />
           <Route path="/total-employee" element={<TotalEmployee />} />
+          <Route path="/contact" element={<Contact />} />
 
           <Route path="/news" element={<AllNews />} />
           <Route path="/notice" element={<AllNotice />} />

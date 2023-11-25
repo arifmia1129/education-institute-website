@@ -5,14 +5,14 @@ const NotFound = () => {
 
   setTimeout(() => {
     navigate("/");
-  }, 5000);
+  }, 30000);
 
   return (
-    <div className="h-[80vh] flex justify-center items-center">
+    <div className="h-[70vh] flex justify-center items-center">
       <div>
-        <h1 className="text-7xl font-bold text-center my-5">404!</h1>
+        <h1 className="text-7xl font-bold text-center my-5">Notice</h1>
         <p className="text-xl font-semibold text-center my-5">
-          দুঃখিত আপনার কাঙ্খিত পেজ খুঁজে পাওয়া যাই নি
+          We will working about this page. Please wait for it.
         </p>
         <div className="flex w-full justify-center">
           <button className="btn btn-primary text-white px-5 py-2">
