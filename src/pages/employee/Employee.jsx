@@ -16,7 +16,7 @@ export default function Employee() {
       const { data } = await api.get("employee");
 
       if (data.success) {
-        setEmployees(data.data);
+        setEmployees(data?.data);
       } else {
         toast.error(data.message);
       }
@@ -36,7 +36,7 @@ export default function Employee() {
   }
   return (
     <div className="p-2 md:p-5">
-      <h1 className="text-4xl font-bold text-primary">{t("EmployeeList")}:</h1>
+      <h1 className="text-4xl font-bold text-primary">{t("employeeInfo")}:</h1>
 
       <div className="my-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {employees?.map((employee) => (
