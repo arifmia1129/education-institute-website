@@ -32,6 +32,8 @@ import Eschool from "../eschool/Eschool";
 import Mpo from "../mpo/Mpo";
 import AddTotalEmployeeInfo from "../dashboard/AddTotalEmployeeInfo";
 import PhotoGallery from "../photoGallery/PhotoGallery";
+import AddMission from "../dashboard/AddMission";
+import AddVision from "../dashboard/AddVision";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -77,6 +79,8 @@ const Index = () => {
             <Route path="add-teacher" element={<AddTeacher />} />
             <Route path="add-employee" element={<AddEmployee />} />
             <Route path="add-management" element={<AddManagement />} />
+            <Route path="add-mission" element={<AddMission />} />
+            <Route path="add-vision" element={<AddVision />} />
             <Route
               path="add-total-employee-info"
               element={<AddTotalEmployeeInfo />}

@@ -161,7 +161,7 @@ export default function AddTotalEmployeeInfo() {
           </div>
           <div className="relative mt-6">
             <button type="submit" className="btn btn-primary text-white">
-              Login
+              Add Total Employee Info
             </button>
           </div>
         </form>

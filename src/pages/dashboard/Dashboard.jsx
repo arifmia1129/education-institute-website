@@ -77,6 +77,28 @@ const Dashboard = () => {
               className={({ isActive }) =>
                 isActive ? activeClass : inactiveClass
               }
+              to="/dashboard/add-mission"
+            >
+              <p>Add Mission</p>
+              <IoMdArrowDropright size={25} />
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? activeClass : inactiveClass
+              }
+              to="/dashboard/add-vision"
+            >
+              <p>Add Vision</p>
+              <IoMdArrowDropright size={25} />
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? activeClass : inactiveClass
+              }
               to="/dashboard/add-teacher"
             >
               <p>{t("addTeacherBtn")}</p>
