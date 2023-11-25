@@ -1,23 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import api from "../../utils/axios.config";
 import Loading from "../../ui/shared/Loading";
+import { useForm } from "react-hook-form";
 
-export default function AddEmployee() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [employee, setEmployee] = useState("");
+export default function AddTotalEmployeeInfo() {
+  const [processing, setIsProcessing] = useState(false);
+  const [totalEmployee, setTotalEmployee] = useState(null);
 
-  const handleAddEmployee = async () => {
-    setIsLoading(true);
+  const handleGetTotalEmployee = async () => {
+    setIsProcessing(true);
+    const { data } = await api.get("total-employee");
 
-    const formDate = new FormData();
+    if (data.success) {
+      setTotalEmployee(data.data);
+    }
 
-    formDate.append("image", employee[0]);
+    setIsProcessing(false);
+  };
 
+  useEffect(() => {
+    handleGetTotalEmployee();
+  }, []);
+
+  const { register, handleSubmit } = useForm({
+    defaultValues: totalEmployee,
+  });
+
+  const onSubmit = async (info) => {
+    setIsProcessing(true);
     try {
-      const { data } = await api.post("employee/create", formDate);
+      const { data } = await api.patch("total-employee", info);
 
       if (data.success) {
+        handleGetTotalEmployee();
         toast.success(data.message);
       } else {
         toast.error(data.message);
@@ -25,29 +41,131 @@ export default function AddEmployee() {
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {
-      setIsLoading(false);
+      setIsProcessing(false);
     }
   };
 
-  if (isLoading) {
+  if (processing) {
     return <Loading />;
   }
 
   return (
     <div className="w-full">
-      <div>
-        <input
-          onChange={(e) => setEmployee(e.target.files)}
-          type="file"
-          className="file-input file-input-bordered file-input-primary w-full max-w-xs"
-        />
-      </div>
-      <button
-        onClick={handleAddEmployee}
-        className="btn btn-primary px-2 py-1 text-white mt-1"
-      >
-        Add employee
-      </button>
+      {totalEmployee && (
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 place-content-center place-items-center">
+            <div className="w-full max-w-md">
+              <label htmlFor="allowedTeacher" className="block ">
+                Allowed Teacher
+              </label>
+              <input
+                defaultValue={totalEmployee?.allowedTeacher}
+                {...register("allowedTeacher")}
+                type="number"
+                id="id"
+                placeholder="Enter allowed teacher"
+                className="input input-bordered w-full md:w-96"
+              />
+            </div>
+            <div className="w-full max-w-md">
+              <label htmlFor="currentTeacher" className="block ">
+                Current Teacher
+              </label>
+              <input
+                {...register("currentTeacher")}
+                defaultValue={totalEmployee?.currentTeacher}
+                type="number"
+                id="id"
+                placeholder="Enter current teacher"
+                className="input input-bordered w-full md:w-96"
+              />
+            </div>
+            <div className="w-full max-w-md">
+              <label htmlFor="maleTeacher" className="block ">
+                Male Teacher
+              </label>
+              <input
+                {...register("maleTeacher")}
+                defaultValue={totalEmployee?.maleTeacher}
+                type="number"
+                id="id"
+                placeholder="Enter male teacher"
+                className="input input-bordered w-full md:w-96"
+              />
+            </div>
+            <div className="w-full max-w-md">
+              <label htmlFor="femaleTeacher" className="block ">
+                Female Teacher
+              </label>
+              <input
+                {...register("femaleTeacher")}
+                defaultValue={totalEmployee?.femaleTeacher}
+                type="number"
+                id="id"
+                placeholder="Enter female teacher"
+                className="input input-bordered w-full md:w-96"
+              />
+            </div>
+            <div className="w-full max-w-md">
+              <label htmlFor="allowedOtherEmployee" className="block ">
+                Allowed other employee
+              </label>
+              <input
+                {...register("allowedOtherEmployee")}
+                defaultValue={totalEmployee?.allowedOtherEmployee}
+                type="number"
+                id="id"
+                placeholder="Enter allowed other employee"
+                className="input input-bordered w-full md:w-96"
+              />
+            </div>
+            <div className="w-full max-w-md">
+              <label htmlFor="currentOtherEmployee" className="block ">
+                Current other employee
+              </label>
+              <input
+                {...register("currentOtherEmployee")}
+                defaultValue={totalEmployee?.currentOtherEmployee}
+                type="number"
+                id="id"
+                placeholder="Enter current other employee"
+                className="input input-bordered w-full md:w-96"
+              />
+            </div>
+            <div className="w-full max-w-md">
+              <label htmlFor="maleOtherEmployee" className="block ">
+                Male other employee
+              </label>
+              <input
+                {...register("maleOtherEmployee")}
+                defaultValue={totalEmployee?.maleOtherEmployee}
+                type="number"
+                id="id"
+                placeholder="Enter male other employee"
+                className="input input-bordered w-full md:w-96"
+              />
+            </div>
+            <div className="w-full max-w-md">
+              <label htmlFor="femaleOtherEmployee" className="block ">
+                Female other employee
+              </label>
+              <input
+                {...register("femaleOtherEmployee")}
+                defaultValue={totalEmployee?.femaleOtherEmployee}
+                type="number"
+                id="id"
+                placeholder="Enter female other employee"
+                className="input input-bordered w-full md:w-96"
+              />
+            </div>
+          </div>
+          <div className="relative mt-6">
+            <button type="submit" className="btn btn-primary text-white">
+              Login
+            </button>
+          </div>
+        </form>
+      )}
     </div>
   );
 }

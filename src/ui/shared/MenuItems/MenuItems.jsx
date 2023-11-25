@@ -119,7 +119,7 @@ export default function MenuItems() {
                     ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
                     : "font-semibold  text-md"
                 }
-                to="/teachers-information"
+                to="/mpo"
               >
                 {t("mpoInfo")}
               </NavLink>
