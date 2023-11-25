@@ -13,6 +13,8 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  const langCode = localStorage.getItem("langCode");
+
   const handleLoggedIn = () => {
     setIsLoading(true);
     const token = JSON.parse(localStorage.getItem("token"));
@@ -27,6 +29,12 @@ function App() {
   useEffect(() => {
     handleLoggedIn();
   }, []);
+
+  useEffect(() => {
+    if (!langCode) {
+      localStorage.setItem("langCode", "en");
+    }
+  }, [langCode]);
 
   const value = {
     isLoggedIn,
