@@ -5,17 +5,18 @@ import { baseUrl } from "../../utils/url";
 const AboutUs = () => {
   const [history, setHistory] = useState("");
 
-  const handleGetHistory = async () => {
-    const { data } = await api.get(`${baseUrl}/about`);
-
-    if (data?.success) {
-      setHistory(data?.data?.history);
-    }
-  };
+  const languageCode = localStorage.getItem("langCode");
 
   useEffect(() => {
+    const handleGetHistory = async () => {
+      const { data } = await api.get(`${baseUrl}/about/${languageCode}`);
+
+      if (data?.success) {
+        setHistory(data?.data?.history);
+      }
+    };
     handleGetHistory();
-  }, []);
+  }, [languageCode]);
   return (
     <div>
       <div className="relative">

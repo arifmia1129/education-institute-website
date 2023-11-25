@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../App";
-import { useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import Loading from "../../ui/shared/Loading";
 
 export default function Dashboard() {
@@ -22,14 +22,16 @@ export default function Dashboard() {
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
+      <label
+        htmlFor="my-drawer-2"
+        className="btn btn-primary drawer-button lg:hidden"
+      >
+        Open drawer
+      </label>
+      <div className="drawer-content p-2">
         {/* Page content here */}
-        <label
-          htmlFor="my-drawer-2"
-          className="btn btn-primary drawer-button lg:hidden"
-        >
-          Open drawer
-        </label>
+
+        <Outlet />
       </div>
       <div className="drawer-side">
         <label
@@ -40,10 +42,7 @@ export default function Dashboard() {
         <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
           {/* Sidebar content here */}
           <li>
-            <a>Sidebar Item 1</a>
-          </li>
-          <li>
-            <a>Sidebar Item 2</a>
+            <NavLink to="add-history">Add School History</NavLink>
           </li>
         </ul>
       </div>

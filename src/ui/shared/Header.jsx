@@ -37,14 +37,23 @@ export default function Header() {
       <div className="mt-2 justify-end hidden lg:flex">
         <div>
           {isLoggedIn ? (
-            <button
-              onClick={() => {
-                localStorage.removeItem("token");
-                handleLoggedIn();
-              }}
-            >
-              {t("logoutBtnTxt")}
-            </button>
+            <>
+              <Link
+                to={"/dashboard/add-history"}
+                className="btn btn-primary text-white btn-sm mx-1"
+              >
+                Dashboard
+              </Link>
+              <button
+                className="btn btn-error text-white btn-sm mx-1"
+                onClick={() => {
+                  localStorage.removeItem("token");
+                  handleLoggedIn();
+                }}
+              >
+                {t("logoutBtnTxt")}
+              </button>
+            </>
           ) : (
             <Link to="/admin-login">
               <button className="btn btn-primary text-white btn-sm">

@@ -19,6 +19,7 @@ import Admission from "../admission/Admission";
 import Marquee from "react-fast-marquee";
 import { useTranslation } from "react-i18next";
 import Dashboard from "../dashboard/Dashboard";
+import AddSchoolHistory from "../dashboard/AddSchoolHistory";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -50,7 +51,9 @@ const Index = () => {
             <Route path="managing-member" element={<ManagingMembers />} />
           </Route>
 
-          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="add-history" element={<AddSchoolHistory />} />
+          </Route>
 
           <Route path="*" element={<NotFound />} />
         </Routes>
