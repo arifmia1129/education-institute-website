@@ -34,6 +34,7 @@ import AddTotalEmployeeInfo from "../dashboard/AddTotalEmployeeInfo";
 import PhotoGallery from "../photoGallery/PhotoGallery";
 import AddMission from "../dashboard/AddMission";
 import AddVision from "../dashboard/AddVision";
+import AddMpo from "../dashboard/AddMpo";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -81,6 +82,7 @@ const Index = () => {
             <Route path="add-management" element={<AddManagement />} />
             <Route path="add-mission" element={<AddMission />} />
             <Route path="add-vision" element={<AddVision />} />
+            <Route path="add-mpo" element={<AddMpo />} />
             <Route
               path="add-total-employee-info"
               element={<AddTotalEmployeeInfo />}
