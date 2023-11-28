@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NotFound = () => {
   const navigate = useNavigate();
@@ -15,9 +15,9 @@ const NotFound = () => {
           We will working about this page. Please wait for it.
         </p>
         <div className="flex w-full justify-center">
-          <button className="btn btn-primary text-white px-5 py-2">
+          <Link to="/" className="btn btn-primary text-white px-5 py-2">
             Back To Home
-          </button>
+          </Link>
         </div>
       </div>
     </div>

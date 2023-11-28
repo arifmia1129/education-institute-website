@@ -42,6 +42,8 @@ import Exam from "../exam/Exam";
 import { useEffect, useState } from "react";
 import api from "../../utils/axios.config";
 import { FaLocationArrow } from "react-icons/fa";
+import AddExamInfo from "../dashboard/AddExamInfo";
+import StudentInfo from "../student/StudentInfo";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -94,6 +96,7 @@ const Index = () => {
           <Route path="/photo-gallery" element={<PhotoGallery />} />
           <Route path="/application" element={<Application />} />
           <Route path="/exam-info" element={<Exam />} />
+          <Route path="/student-info" element={<StudentInfo />} />
 
           <Route path="/news" element={<AllNews />} />
           <Route path="/notice" element={<AllNotice />} />
@@ -120,6 +123,7 @@ const Index = () => {
             <Route path="add-vision" element={<AddVision />} />
             <Route path="add-mpo" element={<AddMpo />} />
             <Route path="add-notice" element={<AddNotice />} />
+            <Route path="add-exam-info" element={<AddExamInfo />} />
             <Route
               path="add-application-form"
               element={<AddApplicationForm />}

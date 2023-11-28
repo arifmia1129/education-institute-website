@@ -171,6 +171,17 @@ const Dashboard = () => {
               <IoMdArrowDropright size={25} />
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? activeClass : inactiveClass
+              }
+              to="/dashboard/add-exam-info"
+            >
+              <p>Add Exam Info</p>
+              <IoMdArrowDropright size={25} />
+            </NavLink>
+          </li>
         </ul>
       </div>
     </div>

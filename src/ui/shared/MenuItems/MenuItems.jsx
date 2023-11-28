@@ -500,93 +500,16 @@ export default function MenuItems() {
         </details>
       </li>
       <li>
-        <details
-          open={isOpenSubmenu === "student-info"}
-          onClick={(e) => {
-            e.preventDefault();
-            setIsOpenSubmenu(
-              isOpenSubmenu === "student-info" ? null : "student-info"
-            );
-          }}
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+              : "font-semibold  text-md"
+          }
+          to="/student-info"
         >
-          <summary className="font-semibold  text-md my-auto">
-            {t("studentInfo")}
-          </summary>
-          <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/management-commite"
-              >
-                {t("searchStudentId")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/teachers-information"
-              >
-                {t("studentInfoByClass")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("stipenerInfo")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("talentStudentInfo")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("presentStudentByClass")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("pastTalentStudentInfo")}
-              </NavLink>
-            </li>
-          </ul>
-        </details>
+          {t("studentInfo")}
+        </NavLink>
       </li>
       <li>
         <details
