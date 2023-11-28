@@ -618,57 +618,16 @@ export default function MenuItems() {
         </details>
       </li>
       <li>
-        <details
-          open={isOpenSubmenu === "exam-info"}
-          onClick={(e) => {
-            e.preventDefault();
-            setIsOpenSubmenu(
-              isOpenSubmenu === "exam-info" ? null : "exam-info"
-            );
-          }}
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+              : "font-semibold  text-md"
+          }
+          to="/exam-info"
         >
-          <summary className="font-semibold  text-md my-auto">
-            {t("examInfo")}
-          </summary>
-          <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/admission"
-              >
-                {t("examResults")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/admission"
-              >
-                {t("passedStudent")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/admission"
-              >
-                {t("failedStudent")}
-              </NavLink>
-            </li>
-          </ul>
-        </details>
+          {t("examInfo")}
+        </NavLink>
       </li>
       <li>
         <NavLink

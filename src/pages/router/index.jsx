@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Navbar from "../../ui/shared/Navbar";
 import Footer from "../../ui/shared/Footer";
 import Home from "../home/Home";
@@ -38,9 +38,29 @@ import AddMpo from "../dashboard/AddMpo";
 import AddNotice from "../dashboard/AddNotice";
 import Application from "../application/Application";
 import AddApplicationForm from "../dashboard/AddApplicationForm";
+import Exam from "../exam/Exam";
+import { useEffect, useState } from "react";
+import api from "../../utils/axios.config";
+import { FaLocationArrow } from "react-icons/fa";
 
 const Index = () => {
   const { t } = useTranslation();
+
+  const [notices, setNotices] = useState([]);
+
+  const languageCode = localStorage.getItem("langCode");
+
+  useEffect(() => {
+    const handleGetNotice = async () => {
+      const { data } = await api.get(`notice/${languageCode}?limit=5`);
+
+      if (data.success) {
+        setNotices(data.data);
+      }
+    };
+    handleGetNotice();
+  }, [languageCode]);
+
   return (
     <div>
       <div className="sticky top-0 z-40">
@@ -48,7 +68,18 @@ const Index = () => {
       </div>
       <div className="bg-primary p-2 text-white flex items-center">
         <p className="font-bold text-lg">{t("latest")}:</p>
-        <Marquee>{t("breakingNews")}</Marquee>
+        <Marquee>
+          {notices?.map((notice) => (
+            <Link
+              to="/notice"
+              className="mx-5 flex items-center"
+              key={notice?._id}
+            >
+              <FaLocationArrow color="#fff" size={25} />
+              <p className="mx-2">{notice?.title}</p>
+            </Link>
+          ))}
+        </Marquee>
       </div>
       <div className="mx-2 md:mx-5">
         <Routes>
@@ -62,6 +93,7 @@ const Index = () => {
           <Route path="/mpo" element={<Mpo />} />
           <Route path="/photo-gallery" element={<PhotoGallery />} />
           <Route path="/application" element={<Application />} />
+          <Route path="/exam-info" element={<Exam />} />
 
           <Route path="/news" element={<AllNews />} />
           <Route path="/notice" element={<AllNotice />} />
