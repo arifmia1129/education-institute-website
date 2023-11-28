@@ -36,6 +36,7 @@ import AddMission from "../dashboard/AddMission";
 import AddVision from "../dashboard/AddVision";
 import AddMpo from "../dashboard/AddMpo";
 import AddNotice from "../dashboard/AddNotice";
+import Application from "../application/Application";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -59,6 +60,7 @@ const Index = () => {
           <Route path="/e-school" element={<Eschool />} />
           <Route path="/mpo" element={<Mpo />} />
           <Route path="/photo-gallery" element={<PhotoGallery />} />
+          <Route path="/application" element={<Application />} />
 
           <Route path="/news" element={<AllNews />} />
           <Route path="/notice" element={<AllNotice />} />
