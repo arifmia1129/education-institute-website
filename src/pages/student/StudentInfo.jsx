@@ -5,9 +5,6 @@ import Loading from "../../ui/shared/Loading";
 import PageHeader from "../../components/PageHeader";
 
 const StudentInfo = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [limit, setLimit] = useState(10);
-
   const [processing, setIsProcessing] = useState(false);
   const [students, setStudents] = useState(null);
 
@@ -31,7 +28,7 @@ const StudentInfo = () => {
       }
     };
     handleGetStudent();
-  }, [currentPage, limit, languageCode]);
+  }, [languageCode]);
 
   if (processing) {
     return <Loading />;
