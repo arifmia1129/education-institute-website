@@ -8,8 +8,6 @@ const StudentInfo = () => {
   const [processing, setIsProcessing] = useState(false);
   const [students, setStudents] = useState(null);
 
-  console.log(students);
-
   const languageCode = localStorage.getItem("langCode");
 
   useEffect(() => {

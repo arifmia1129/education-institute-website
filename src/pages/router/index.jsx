@@ -45,6 +45,7 @@ import { FaLocationArrow } from "react-icons/fa";
 import AddExamInfo from "../dashboard/AddExamInfo";
 import StudentInfo from "../student/StudentInfo";
 import AddStudentInfo from "../dashboard/AddStudentInfo";
+import Cocurriculum from "../Cocurriculum";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -98,6 +99,7 @@ const Index = () => {
           <Route path="/application" element={<Application />} />
           <Route path="/exam-info" element={<Exam />} />
           <Route path="/student-info" element={<StudentInfo />} />
+          <Route path="/cocurriculum" element={<Cocurriculum />} />
 
           <Route path="/news" element={<AllNews />} />
           <Route path="/notice" element={<AllNotice />} />

@@ -397,107 +397,16 @@ export default function MenuItems() {
         </details>
       </li>
       <li>
-        <details
-          open={isOpenSubmenu === "extra-activities-info"}
-          onClick={(e) => {
-            e.preventDefault();
-            setIsOpenSubmenu(
-              isOpenSubmenu === "extra-activities-info"
-                ? null
-                : "extra-activities-info"
-            );
-          }}
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+              : "font-semibold text-md"
+          }
+          to="/cocurriculum"
         >
-          <summary className="font-semibold  text-md my-auto">
-            {t("coCurriculumInfo")}
-          </summary>
-          <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/management-commite"
-              >
-                {t("scoutInfo")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/teachers-information"
-              >
-                {t("scienceClub")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("cultureClub")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("educationClub")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("playingsClub")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("ICTClub")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("otherActivity")}
-              </NavLink>
-            </li>
-          </ul>
-        </details>
+          {t("coCurriculumInfo")}
+        </NavLink>
       </li>
       <li>
         <NavLink
