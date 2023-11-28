@@ -37,6 +37,7 @@ import AddVision from "../dashboard/AddVision";
 import AddMpo from "../dashboard/AddMpo";
 import AddNotice from "../dashboard/AddNotice";
 import Application from "../application/Application";
+import AddApplicationForm from "../dashboard/AddApplicationForm";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -87,6 +88,10 @@ const Index = () => {
             <Route path="add-vision" element={<AddVision />} />
             <Route path="add-mpo" element={<AddMpo />} />
             <Route path="add-notice" element={<AddNotice />} />
+            <Route
+              path="add-application-form"
+              element={<AddApplicationForm />}
+            />
             <Route
               path="add-total-employee-info"
               element={<AddTotalEmployeeInfo />}
