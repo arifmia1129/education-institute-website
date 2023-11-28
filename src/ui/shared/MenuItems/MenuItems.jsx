@@ -671,69 +671,16 @@ export default function MenuItems() {
         </details>
       </li>
       <li>
-        <details
-          open={isOpenSubmenu === "online-app-info"}
-          onClick={(e) => {
-            e.preventDefault();
-            setIsOpenSubmenu(
-              isOpenSubmenu === "online-app-info" ? null : "online-app-info"
-            );
-          }}
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+              : "font-semibold  text-md"
+          }
+          to="/admission"
         >
-          <summary className="font-semibold  text-md my-auto">
-            {t("onlineApplication")}
-          </summary>
-          <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/admission"
-              >
-                {t("studentLeaveApplication")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/admission"
-              >
-                {t("teacherLeaveApplication")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/admission"
-              >
-                {t("certificationApplication")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/admission"
-              >
-                {t("recommendationApplication")}
-              </NavLink>
-            </li>
-          </ul>
-        </details>
+          {t("application")}
+        </NavLink>
       </li>
 
       <li>

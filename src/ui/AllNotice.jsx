@@ -15,7 +15,7 @@ const AllNotice = () => {
 
   useEffect(() => {
     const handleGetNotice = async () => {
-      // setIsProcessing(true);
+      setIsProcessing(true);
       try {
         const { data } = await api.get(
           `notice/${languageCode}?page=${currentPage}&limit=${limit}`
@@ -45,6 +45,7 @@ const AllNotice = () => {
           {/* head */}
           <thead className="text-lg">
             <tr>
+              <th>Date</th>
               <th>Notice</th>
               <th>Download</th>
             </tr>
@@ -52,6 +53,7 @@ const AllNotice = () => {
           <tbody>
             {notices?.map((notice) => (
               <tr key={notice._id}>
+                <td>{notice?.date}</td>
                 <td>{notice?.title}</td>
                 <td>
                   <a
