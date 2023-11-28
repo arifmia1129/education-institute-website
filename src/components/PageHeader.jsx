@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 export default function PageHeader({ title }) {
   return (
-    <div className="relative">
+    <div className="relative my-10">
       <div className="relative h-[20vh] mx-auto  w-[95vw] bg-[url('/src/assets/institute.jpg')] bg-cover bg-no-repeat">
         <div
           className="absolute inset-0"
