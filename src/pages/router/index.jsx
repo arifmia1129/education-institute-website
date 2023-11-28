@@ -47,6 +47,7 @@ import StudentInfo from "../student/StudentInfo";
 import AddStudentInfo from "../dashboard/AddStudentInfo";
 import Cocurriculum from "../Cocurriculum";
 import AddCocurrilar from "../dashboard/AddCocurrilar";
+import Teaching from "../teaching/Teaching";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -101,6 +102,7 @@ const Index = () => {
           <Route path="/exam-info" element={<Exam />} />
           <Route path="/student-info" element={<StudentInfo />} />
           <Route path="/cocurriculum" element={<Cocurriculum />} />
+          <Route path="/teaching" element={<Teaching />} />
 
           <Route path="/news" element={<AllNews />} />
           <Route path="/notice" element={<AllNotice />} />

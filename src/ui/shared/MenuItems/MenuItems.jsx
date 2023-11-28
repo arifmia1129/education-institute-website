@@ -272,129 +272,16 @@ export default function MenuItems() {
         </details>
       </li>
       <li>
-        <details
-          open={isOpenSubmenu === "class-info"}
-          onClick={(e) => {
-            e.preventDefault();
-            setIsOpenSubmenu(
-              isOpenSubmenu === "class-info" ? null : "class-info"
-            );
-          }}
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
+              : "font-semibold  text-md"
+          }
+          to="/teaching"
         >
-          <summary className="font-semibold  text-md my-auto">
-            {t("teachingInfo")}
-          </summary>
-          <ul className="p-2 bg-base-100 w-52 h-52 overflow-auto hide-scrollbar">
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/management-commite"
-              >
-                {t("oathInfo")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/teachers-information"
-              >
-                {t("classRoutinesInfo")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("classInfo")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("feeInfo")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("curriculumInfo")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("seatInfo")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("bookListInfo")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("uniformInfo")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-4 text-primary w-fit border-b-primary font-bold rounded-none  text-md"
-                    : "font-semibold  text-md"
-                }
-                to="/employee-information"
-              >
-                {t("ruleInfo")}
-              </NavLink>
-            </li>
-          </ul>
-        </details>
+          {t("teachingInfo")}
+        </NavLink>
       </li>
       <li>
         <NavLink

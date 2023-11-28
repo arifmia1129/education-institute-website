@@ -8,8 +8,6 @@ export default function AddCocurrilar() {
   const [processing, setIsProcessing] = useState(false);
   const [info, setInfos] = useState(null);
 
-  console.log(info);
-
   const { register, handleSubmit, reset } = useForm({
     defaultValues: info,
   });
