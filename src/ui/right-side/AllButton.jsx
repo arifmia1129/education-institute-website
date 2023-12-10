@@ -11,17 +11,17 @@ export default function AllButton() {
     {
       id: 2,
       title: "ক্লাস রুটিন",
-      src: "/",
+      src: "/teaching",
     },
     {
       id: 3,
       title: "সিলেবাস",
-      src: "/",
+      src: "/teaching",
     },
     {
       id: 4,
       title: "পরীক্ষার রুটিন",
-      src: "/",
+      src: "/exam-info",
     },
     {
       id: 5,

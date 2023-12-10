@@ -25,7 +25,7 @@ const AdminLogin = () => {
   useEffect(() => {
     handleLoggedIn();
     if (isLoggedIn && !isLoading) {
-      navigate("/dashboard");
+      navigate("/dashboard/add-history");
     }
   }, [isLoggedIn, navigate, isLoading]);
 

@@ -6,6 +6,7 @@ import "./i18n";
 import { Toaster } from "react-hot-toast";
 import { createContext, useEffect, useState } from "react";
 import Loading from "./ui/shared/Loading";
+import "react-quill/dist/quill.snow.css";
 
 export const AuthContext = createContext(null);
 
